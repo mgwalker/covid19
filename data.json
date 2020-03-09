@@ -411,6 +411,12 @@
       }
     },
     "MN": {
+      "Carver County": {
+        "active": 1,
+        "confirmed": 1,
+        "deaths": 0,
+        "recovered": 0
+      },
       "Ramsey County": {
         "active": 1,
         "confirmed": 1,
@@ -418,8 +424,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 2,
+        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       }
@@ -460,14 +466,14 @@
     },
     "NE": {
       "Douglas County": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 3,
+        "confirmed": 3,
         "deaths": 0,
         "recovered": 0
       },
       "total": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 3,
+        "confirmed": 3,
         "deaths": 0,
         "recovered": 0
       }
@@ -878,8 +884,8 @@
     }
   },
   "total": {
-    "active": 515,
-    "confirmed": 544,
+    "active": 518,
+    "confirmed": 547,
     "deaths": 21,
     "recovered": 8
   }

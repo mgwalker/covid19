@@ -10,6 +10,18 @@ jobs:
     container: python:3.8
     steps:
       - uses: actions/checkout@v1
-      - run: pip install pipenv
-      - run: pipenv install --ignore-pipfile
-      - run: python update/main.py
+      - name: install dependencies
+        run: |
+          pip install pipenv
+          pipenv install --ignore-pipfile
+      - name: update map data
+        run: pipenv run python update/main.py
+      - name: commit
+        run: |
+          git config --local user.email "mgwalker@users.noreply.github.com"
+          git config --local user.name "automatic update"
+          git commit -m "regular update" -a
+      - name: push
+        uses: ad-m/github-push-action@68af989
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}

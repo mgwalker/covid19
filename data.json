@@ -118,8 +118,8 @@
         "recovered": 0
       },
       "Sonoma County": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 3,
+        "confirmed": 3,
         "deaths": 0,
         "recovered": 0
       },
@@ -130,8 +130,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 99,
-        "confirmed": 102,
+        "active": 101,
+        "confirmed": 104,
         "deaths": 1,
         "recovered": 2
       }
@@ -922,8 +922,8 @@
     }
   },
   "total": {
-    "active": 534,
-    "confirmed": 564,
+    "active": 536,
+    "confirmed": 566,
     "deaths": 22,
     "recovered": 8
   }

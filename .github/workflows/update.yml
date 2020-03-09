@@ -1,0 +1,15 @@
+name: update
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    container: python:3.8
+    steps:
+      - uses: actions/checkout@v1
+      - run: pip install pipenv
+      - run: pipenv install --ignore-pipfile
+      - run: python update/main.py

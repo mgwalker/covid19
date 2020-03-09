@@ -258,8 +258,8 @@
         "recovered": 0
       },
       "Fulton County": {
-        "active": 4,
-        "confirmed": 4,
+        "active": 5,
+        "confirmed": 5,
         "deaths": 0,
         "recovered": 0
       },
@@ -270,8 +270,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 9,
-        "confirmed": 9,
+        "active": 10,
+        "confirmed": 10,
         "deaths": 0,
         "recovered": 0
       }
@@ -374,6 +374,20 @@
       "total": {
         "active": 4,
         "confirmed": 4,
+        "deaths": 0,
+        "recovered": 0
+      }
+    },
+    "LA": {
+      "Jefferson Parish": {
+        "active": 1,
+        "confirmed": 1,
+        "deaths": 0,
+        "recovered": 0
+      },
+      "total": {
+        "active": 1,
+        "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       }
@@ -692,8 +706,8 @@
         "recovered": 0
       },
       "Montgomery County": {
-        "active": 4,
-        "confirmed": 4,
+        "active": 5,
+        "confirmed": 5,
         "deaths": 0,
         "recovered": 0
       },
@@ -704,8 +718,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 6,
-        "confirmed": 6,
+        "active": 7,
+        "confirmed": 7,
         "deaths": 0,
         "recovered": 0
       }
@@ -777,6 +791,12 @@
       }
     },
     "TX": {
+      "Collin County": {
+        "active": 1,
+        "confirmed": 1,
+        "deaths": 0,
+        "recovered": 0
+      },
       "Fort Bend County": {
         "active": 6,
         "confirmed": 6,
@@ -796,8 +816,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 13,
-        "confirmed": 13,
+        "active": 14,
+        "confirmed": 14,
         "deaths": 0,
         "recovered": 0
       }
@@ -922,8 +942,8 @@
     }
   },
   "total": {
-    "active": 573,
-    "confirmed": 603,
+    "active": 577,
+    "confirmed": 607,
     "deaths": 22,
     "recovered": 8
   }

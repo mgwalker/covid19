@@ -423,12 +423,6 @@
       }
     },
     "MD": {
-      "Baltimore County": {
-        "active": 1,
-        "confirmed": 1,
-        "deaths": 0,
-        "recovered": 0
-      },
       "Harford County": {
         "active": 1,
         "confirmed": 1,
@@ -442,8 +436,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 6,
-        "confirmed": 6,
+        "active": 5,
+        "confirmed": 5,
         "deaths": 0,
         "recovered": 0
       }
@@ -922,8 +916,8 @@
     }
   },
   "total": {
-    "active": 536,
-    "confirmed": 566,
+    "active": 535,
+    "confirmed": 565,
     "deaths": 22,
     "recovered": 8
   }

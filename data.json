@@ -469,9 +469,15 @@
         "deaths": 0,
         "recovered": 0
       },
-      "total": {
+      "Wyandotte County": {
         "active": 1,
         "confirmed": 1,
+        "deaths": 0,
+        "recovered": 0
+      },
+      "total": {
+        "active": 2,
+        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       }
@@ -572,20 +578,20 @@
     },
     "NY": {
       "Nassau County": {
-        "active": 5,
-        "confirmed": 5,
+        "active": 17,
+        "confirmed": 17,
         "deaths": 0,
         "recovered": 0
       },
       "New York County": {
-        "active": 12,
-        "confirmed": 12,
+        "active": 19,
+        "confirmed": 19,
         "deaths": 0,
         "recovered": 0
       },
       "Rockland County": {
-        "active": 2,
-        "confirmed": 2,
+        "active": 4,
+        "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
@@ -608,14 +614,14 @@
         "recovered": 0
       },
       "Westchester County": {
-        "active": 82,
-        "confirmed": 82,
+        "active": 98,
+        "confirmed": 98,
         "deaths": 0,
         "recovered": 0
       },
       "total": {
-        "active": 105,
-        "confirmed": 105,
+        "active": 142,
+        "confirmed": 142,
         "deaths": 0,
         "recovered": 0
       }
@@ -916,8 +922,8 @@
     }
   },
   "total": {
-    "active": 535,
-    "confirmed": 565,
+    "active": 573,
+    "confirmed": 603,
     "deaths": 22,
     "recovered": 8
   }

@@ -111,6 +111,12 @@
         "deaths": 0,
         "recovered": 1
       },
+      "Shasta County": {
+        "active": 1,
+        "confirmed": 1,
+        "deaths": 0,
+        "recovered": 0
+      },
       "Sonoma County": {
         "active": 1,
         "confirmed": 1,
@@ -124,8 +130,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 96,
-        "confirmed": 99,
+        "active": 97,
+        "confirmed": 100,
         "deaths": 1,
         "recovered": 2
       }
@@ -233,15 +239,21 @@
       }
     },
     "GA": {
-      "Cobb County": {
+      "Cherokee County": {
         "active": 1,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
-      "Fulton County": {
+      "Cobb County": {
         "active": 3,
         "confirmed": 3,
+        "deaths": 0,
+        "recovered": 0
+      },
+      "Fulton County": {
+        "active": 4,
+        "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
@@ -252,22 +264,22 @@
         "recovered": 0
       },
       "total": {
-        "active": 5,
-        "confirmed": 5,
+        "active": 9,
+        "confirmed": 9,
         "deaths": 0,
         "recovered": 0
       }
     },
     "HI": {
       "Honolulu County": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 2,
+        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "total": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 2,
+        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       }
@@ -391,6 +403,12 @@
       }
     },
     "MD": {
+      "Baltimore County": {
+        "active": 1,
+        "confirmed": 1,
+        "deaths": 0,
+        "recovered": 0
+      },
       "Harford County": {
         "active": 1,
         "confirmed": 1,
@@ -404,8 +422,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 5,
-        "confirmed": 5,
+        "active": 6,
+        "confirmed": 6,
         "deaths": 0,
         "recovered": 0
       }
@@ -884,8 +902,8 @@
     }
   },
   "total": {
-    "active": 518,
-    "confirmed": 547,
+    "active": 525,
+    "confirmed": 554,
     "deaths": 21,
     "recovered": 8
   }

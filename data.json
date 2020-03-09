@@ -258,8 +258,8 @@
         "recovered": 0
       },
       "Fulton County": {
-        "active": 5,
-        "confirmed": 5,
+        "active": 4,
+        "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
@@ -270,8 +270,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 10,
-        "confirmed": 10,
+        "active": 9,
+        "confirmed": 9,
         "deaths": 0,
         "recovered": 0
       }
@@ -378,20 +378,6 @@
         "recovered": 0
       }
     },
-    "LA": {
-      "Jefferson Parish": {
-        "active": 1,
-        "confirmed": 1,
-        "deaths": 0,
-        "recovered": 0
-      },
-      "total": {
-        "active": 1,
-        "confirmed": 1,
-        "deaths": 0,
-        "recovered": 0
-      }
-    },
     "MA": {
       "Berkshire County": {
         "active": 1,
@@ -483,15 +469,9 @@
         "deaths": 0,
         "recovered": 0
       },
-      "Wyandotte County": {
+      "total": {
         "active": 1,
         "confirmed": 1,
-        "deaths": 0,
-        "recovered": 0
-      },
-      "total": {
-        "active": 2,
-        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       }
@@ -592,20 +572,20 @@
     },
     "NY": {
       "Nassau County": {
-        "active": 17,
-        "confirmed": 17,
+        "active": 5,
+        "confirmed": 5,
         "deaths": 0,
         "recovered": 0
       },
       "New York County": {
-        "active": 19,
-        "confirmed": 19,
+        "active": 12,
+        "confirmed": 12,
         "deaths": 0,
         "recovered": 0
       },
       "Rockland County": {
-        "active": 4,
-        "confirmed": 4,
+        "active": 2,
+        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
@@ -628,14 +608,14 @@
         "recovered": 0
       },
       "Westchester County": {
-        "active": 98,
-        "confirmed": 98,
+        "active": 82,
+        "confirmed": 82,
         "deaths": 0,
         "recovered": 0
       },
       "total": {
-        "active": 142,
-        "confirmed": 142,
+        "active": 105,
+        "confirmed": 105,
         "deaths": 0,
         "recovered": 0
       }
@@ -706,8 +686,8 @@
         "recovered": 0
       },
       "Montgomery County": {
-        "active": 5,
-        "confirmed": 5,
+        "active": 4,
+        "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
@@ -718,8 +698,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 7,
-        "confirmed": 7,
+        "active": 6,
+        "confirmed": 6,
         "deaths": 0,
         "recovered": 0
       }
@@ -791,12 +771,6 @@
       }
     },
     "TX": {
-      "Collin County": {
-        "active": 1,
-        "confirmed": 1,
-        "deaths": 0,
-        "recovered": 0
-      },
       "Fort Bend County": {
         "active": 6,
         "confirmed": 6,
@@ -816,8 +790,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 14,
-        "confirmed": 14,
+        "active": 13,
+        "confirmed": 13,
         "deaths": 0,
         "recovered": 0
       }
@@ -942,8 +916,8 @@
     }
   },
   "total": {
-    "active": 577,
-    "confirmed": 607,
+    "active": 535,
+    "confirmed": 565,
     "deaths": 22,
     "recovered": 8
   }

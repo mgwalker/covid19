@@ -64,8 +64,8 @@
         "recovered": 0
       },
       "Placer County": {
-        "active": 4,
-        "confirmed": 5,
+        "active": 6,
+        "confirmed": 7,
         "deaths": 1,
         "recovered": 0
       },
@@ -130,8 +130,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 97,
-        "confirmed": 100,
+        "active": 99,
+        "confirmed": 102,
         "deaths": 1,
         "recovered": 2
       }
@@ -184,8 +184,14 @@
     },
     "FL": {
       "Broward County": {
-        "active": 2,
-        "confirmed": 2,
+        "active": 3,
+        "confirmed": 3,
+        "deaths": 0,
+        "recovered": 0
+      },
+      "Charlotte County": {
+        "active": 1,
+        "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
@@ -202,8 +208,8 @@
         "recovered": 0
       },
       "Manatee County": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 2,
+        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
@@ -232,8 +238,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 9,
-        "confirmed": 11,
+        "active": 12,
+        "confirmed": 14,
         "deaths": 2,
         "recovered": 0
       }
@@ -284,6 +290,20 @@
         "recovered": 0
       }
     },
+    "IA": {
+      "Johnson County": {
+        "active": 3,
+        "confirmed": 3,
+        "deaths": 0,
+        "recovered": 0
+      },
+      "total": {
+        "active": 3,
+        "confirmed": 3,
+        "deaths": 0,
+        "recovered": 0
+      }
+    },
     "IL": {
       "Cook County": {
         "active": 5,
@@ -300,8 +320,8 @@
     },
     "IN": {
       "Hendricks County": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 2,
+        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
@@ -312,8 +332,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 2,
-        "confirmed": 2,
+        "active": 3,
+        "confirmed": 3,
         "deaths": 0,
         "recovered": 0
       }
@@ -340,8 +360,8 @@
         "recovered": 0
       },
       "Harrison County": {
-        "active": 1,
-        "confirmed": 1,
+        "active": 2,
+        "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
@@ -352,8 +372,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 3,
-        "confirmed": 3,
+        "active": 4,
+        "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       }
@@ -594,14 +614,14 @@
         "recovered": 0
       },
       "Westchester County": {
-        "active": 83,
-        "confirmed": 83,
+        "active": 82,
+        "confirmed": 82,
         "deaths": 0,
         "recovered": 0
       },
       "total": {
-        "active": 106,
-        "confirmed": 106,
+        "active": 105,
+        "confirmed": 105,
         "deaths": 0,
         "recovered": 0
       }
@@ -811,7 +831,7 @@
       }
     },
     "VT": {
-      "Unassigned Location": {
+      "Bennington County": {
         "active": 1,
         "confirmed": 1,
         "deaths": 0,
@@ -832,9 +852,9 @@
         "recovered": 0
       },
       "Grant County": {
-        "active": 1,
+        "active": 0,
         "confirmed": 1,
-        "deaths": 0,
+        "deaths": 1,
         "recovered": 0
       },
       "Jefferson County": {
@@ -880,9 +900,9 @@
         "recovered": 0
       },
       "total": {
-        "active": 109,
+        "active": 108,
         "confirmed": 128,
-        "deaths": 18,
+        "deaths": 19,
         "recovered": 1
       }
     },
@@ -902,9 +922,9 @@
     }
   },
   "total": {
-    "active": 525,
-    "confirmed": 554,
-    "deaths": 21,
+    "active": 533,
+    "confirmed": 563,
+    "deaths": 22,
     "recovered": 8
   }
 }

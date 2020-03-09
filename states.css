@@ -3,7 +3,6 @@
 .NJ, .NJ * { fill: rgb(211, 190, 190); }
 .MN, .MN * { fill: rgb(211, 191, 191); }
 .SC, .SC * { fill: rgb(211, 190, 190); }
-.LA, .LA * { fill: rgb(211, 192, 192); }
 .FL, .FL * { fill: rgb(211, 188, 188); }
 .TX, .TX * { fill: rgb(211, 187, 187); }
 .PA, .PA * { fill: rgb(211, 190, 190); }
@@ -17,7 +16,6 @@
 .OK, .OK * { fill: rgb(211, 192, 192); }
 .WA, .WA * { fill: rgb(211, 156, 156); }
 .RI, .RI * { fill: rgb(211, 191, 191); }
-.IL, .IL * { fill: rgb(211, 190, 190); }
 .GA, .GA * { fill: rgb(211, 189, 189); }
 .KS, .KS * { fill: rgb(211, 192, 192); }
 .VA, .VA * { fill: rgb(211, 191, 191); }
@@ -25,10 +23,12 @@
 .NE, .NE * { fill: rgb(211, 191, 191); }
 .UT, .UT * { fill: rgb(211, 192, 192); }
 .MD, .MD * { fill: rgb(211, 190, 190); }
+.LA, .LA * { fill: rgb(211, 192, 192); }
 .IA, .IA * { fill: rgb(211, 191, 191); }
 .IN, .IN * { fill: rgb(211, 191, 191); }
 .VT, .VT * { fill: rgb(211, 192, 192); }
 .NV, .NV * { fill: rgb(211, 191, 191); }
+.IL, .IL * { fill: rgb(211, 190, 190); }
 .CT, .CT * { fill: rgb(211, 192, 192); }
 .CO, .CO * { fill: rgb(211, 189, 189); }
 .HI, .HI * { fill: rgb(211, 191, 191); }

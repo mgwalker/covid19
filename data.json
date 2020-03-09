@@ -784,8 +784,8 @@
         "recovered": 0
       },
       "Harris County": {
-        "active": 5,
-        "confirmed": 5,
+        "active": 6,
+        "confirmed": 6,
         "deaths": 0,
         "recovered": 0
       },
@@ -796,8 +796,8 @@
         "recovered": 0
       },
       "total": {
-        "active": 12,
-        "confirmed": 12,
+        "active": 13,
+        "confirmed": 13,
         "deaths": 0,
         "recovered": 0
       }
@@ -922,8 +922,8 @@
     }
   },
   "total": {
-    "active": 533,
-    "confirmed": 563,
+    "active": 534,
+    "confirmed": 564,
     "deaths": 22,
     "recovered": 8
   }

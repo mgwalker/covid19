@@ -5,8 +5,6 @@ import json
 raw_data = get_raw_data()
 total = raw_data["total"]
 
-print(raw_data)
-
 css = open("states.css", "w")
 
 max_state = max([s["total"]["active"] for s in raw_data["states"].values()])

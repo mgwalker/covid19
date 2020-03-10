@@ -27,9 +27,9 @@
 .IA, .IA * { fill: rgb(211, 191, 191); }
 .IN, .IN * { fill: rgb(211, 191, 191); }
 .VT, .VT * { fill: rgb(211, 192, 192); }
+.CO, .CO * { fill: rgb(211, 189, 189); }
 .NV, .NV * { fill: rgb(211, 191, 191); }
 .IL, .IL * { fill: rgb(211, 190, 190); }
 .CT, .CT * { fill: rgb(211, 192, 192); }
-.CO, .CO * { fill: rgb(211, 189, 189); }
 .HI, .HI * { fill: rgb(211, 191, 191); }
 .MO, .MO * { fill: rgb(211, 192, 192); }

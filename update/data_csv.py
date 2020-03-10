@@ -63,9 +63,9 @@ def get_raw_data():
 
         for location in state:
             state[location]["active"] = (
-                state["total"]["confirmed"]
-                - state["total"]["deaths"]
-                - state["total"]["recovered"]
+                state[location]["confirmed"]
+                - state[location]["deaths"]
+                - state[location]["recovered"]
             )
         all_data["total"]["active"] += state["total"]["active"]
 

@@ -22,6 +22,10 @@ jobs:
           git config --local user.name "automatic update"
           git commit -m "regular update" -a
       - name: push
+        if: success()
         uses: ad-m/github-push-action@68af989
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: fail gracefully
+        if: failure()
+        run: echo

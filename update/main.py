@@ -7,9 +7,12 @@ total = raw_data["total"]
 
 css = open("states.css", "w")
 
+max_state = max([s["total"]["active"] for s in raw_data["states"].values()])
+print(max_state)
+
 for state in raw_data["states"].keys():
     state_total = raw_data["states"][state]["total"]
-    proportion = state_total["active"] / total["active"]
+    proportion = state_total["active"] / max_state
 
     not_red = round(192 * (1 - proportion))
 

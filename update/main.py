@@ -1,14 +1,15 @@
 import chevron
-from data import get_raw_data
+from data_csv import get_raw_data
 import json
 
 raw_data = get_raw_data()
 total = raw_data["total"]
 
+print(raw_data)
+
 css = open("states.css", "w")
 
 max_state = max([s["total"]["active"] for s in raw_data["states"].values()])
-print(max_state)
 
 for state in raw_data["states"].keys():
     state_total = raw_data["states"][state]["total"]

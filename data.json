@@ -2,13 +2,13 @@
   "states": {
     "AZ": {
       "Maricopa County": {
-        "active": 2,
+        "active": 4,
         "confirmed": 3,
         "deaths": 0,
         "recovered": 1
       },
       "Pinal County": {
-        "active": 2,
+        "active": 4,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
@@ -22,109 +22,115 @@
     },
     "CA": {
       "Alameda County": {
-        "active": 2,
+        "active": 101,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Contra Costa County": {
-        "active": 12,
+        "active": 101,
         "confirmed": 12,
         "deaths": 0,
         "recovered": 0
       },
       "Fresno County": {
-        "active": 1,
+        "active": 101,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Humboldt County": {
-        "active": 1,
+        "active": 101,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Los Angeles": {
-        "active": 14,
+        "active": 101,
         "confirmed": 14,
         "deaths": 0,
         "recovered": 0
       },
       "Madera County": {
-        "active": 1,
+        "active": 101,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Orange County": {
-        "active": 4,
+        "active": 101,
         "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
       "Placer County": {
-        "active": 6,
+        "active": 101,
         "confirmed": 7,
         "deaths": 1,
         "recovered": 0
       },
       "Riverside County": {
-        "active": 1,
+        "active": 101,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Sacramento County": {
-        "active": 2,
+        "active": 101,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "San Benito": {
-        "active": 2,
+        "active": 101,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "San Diego County": {
-        "active": 2,
+        "active": 101,
         "confirmed": 3,
         "deaths": 0,
         "recovered": 1
       },
       "San Francisco County": {
-        "active": 9,
+        "active": 101,
         "confirmed": 9,
         "deaths": 0,
         "recovered": 0
       },
       "San Mateo": {
-        "active": 2,
+        "active": 101,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Santa Clara County": {
-        "active": 37,
+        "active": 101,
         "confirmed": 38,
         "deaths": 0,
         "recovered": 1
       },
       "Shasta County": {
-        "active": 1,
+        "active": 101,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Sonoma County": {
-        "active": 3,
+        "active": 101,
         "confirmed": 3,
         "deaths": 0,
         "recovered": 0
       },
+      "Travis": {
+        "active": 101,
+        "confirmed": 0,
+        "deaths": 0,
+        "recovered": 0
+      },
       "Yolo County": {
-        "active": 1,
+        "active": 101,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -138,25 +144,25 @@
     },
     "CO": {
       "Denver County": {
-        "active": 2,
+        "active": 8,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Douglas County": {
-        "active": 3,
+        "active": 8,
         "confirmed": 3,
         "deaths": 0,
         "recovered": 0
       },
       "El Paso County": {
-        "active": 1,
+        "active": 8,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Summit County": {
-        "active": 2,
+        "active": 8,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
@@ -184,55 +190,55 @@
     },
     "FL": {
       "Broward County": {
-        "active": 3,
+        "active": 12,
         "confirmed": 3,
         "deaths": 0,
         "recovered": 0
       },
       "Charlotte County": {
-        "active": 1,
+        "active": 12,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Hillsborough": {
-        "active": 2,
+        "active": 12,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Lee County": {
-        "active": 1,
+        "active": 12,
         "confirmed": 2,
         "deaths": 1,
         "recovered": 0
       },
       "Manatee County": {
-        "active": 2,
+        "active": 12,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Okaloosa County": {
-        "active": 1,
+        "active": 12,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Santa Rosa County": {
-        "active": 0,
+        "active": 12,
         "confirmed": 1,
         "deaths": 1,
         "recovered": 0
       },
       "Sarasota": {
-        "active": 1,
+        "active": 12,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Volusia County": {
-        "active": 1,
+        "active": 12,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -246,25 +252,25 @@
     },
     "GA": {
       "Cherokee County": {
-        "active": 1,
+        "active": 10,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Cobb County": {
-        "active": 3,
+        "active": 10,
         "confirmed": 3,
         "deaths": 0,
         "recovered": 0
       },
       "Fulton County": {
-        "active": 5,
+        "active": 10,
         "confirmed": 5,
         "deaths": 0,
         "recovered": 0
       },
       "Polk County": {
-        "active": 1,
+        "active": 10,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -320,13 +326,13 @@
     },
     "IN": {
       "Hendricks County": {
-        "active": 2,
+        "active": 3,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Marion County": {
-        "active": 1,
+        "active": 3,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -354,19 +360,19 @@
     },
     "KY": {
       "Fayette County": {
-        "active": 1,
+        "active": 4,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Harrison County": {
-        "active": 2,
+        "active": 4,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Jefferson County": {
-        "active": 1,
+        "active": 4,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -393,38 +399,38 @@
       }
     },
     "MA": {
+      " Norfolk County": {
+        "active": 23,
+        "confirmed": 6,
+        "deaths": 0,
+        "recovered": 0
+      },
       "Berkshire County": {
-        "active": 1,
+        "active": 23,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Middlesex County": {
-        "active": 7,
+        "active": 23,
         "confirmed": 7,
         "deaths": 0,
         "recovered": 0
       },
-      "Norfolk County": {
-        "active": 6,
-        "confirmed": 6,
-        "deaths": 0,
-        "recovered": 0
-      },
       "Plymouth County": {
-        "active": 1,
+        "active": 23,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Suffolk County": {
-        "active": 7,
+        "active": 23,
         "confirmed": 8,
         "deaths": 0,
         "recovered": 1
       },
       "Unknown Location": {
-        "active": 1,
+        "active": 23,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -438,13 +444,13 @@
     },
     "MD": {
       "Harford County": {
-        "active": 1,
+        "active": 5,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Montgomery County": {
-        "active": 4,
+        "active": 5,
         "confirmed": 4,
         "deaths": 0,
         "recovered": 0
@@ -458,13 +464,13 @@
     },
     "MN": {
       "Carver County": {
-        "active": 1,
+        "active": 2,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Ramsey County": {
-        "active": 1,
+        "active": 2,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -492,13 +498,13 @@
     },
     "NC": {
       "Chatham County": {
-        "active": 1,
+        "active": 2,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Wake County": {
-        "active": 1,
+        "active": 2,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -517,6 +523,12 @@
         "deaths": 0,
         "recovered": 0
       },
+      "Omaha": {
+        "active": 3,
+        "confirmed": 0,
+        "deaths": 0,
+        "recovered": 0
+      },
       "total": {
         "active": 3,
         "confirmed": 3,
@@ -526,13 +538,13 @@
     },
     "NH": {
       "Grafton County": {
-        "active": 4,
+        "active": 5,
         "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
       "Rockingham County": {
-        "active": 1,
+        "active": 5,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -546,13 +558,13 @@
     },
     "NJ": {
       "Bergen County": {
-        "active": 4,
+        "active": 5,
         "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
       "Hudson County": {
-        "active": 1,
+        "active": 5,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -566,13 +578,13 @@
     },
     "NV": {
       "Clark County": {
-        "active": 2,
+        "active": 4,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Washoe County": {
-        "active": 2,
+        "active": 4,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
@@ -586,43 +598,43 @@
     },
     "NY": {
       "Nassau County": {
-        "active": 17,
+        "active": 142,
         "confirmed": 17,
         "deaths": 0,
         "recovered": 0
       },
       "New York County": {
-        "active": 19,
+        "active": 142,
         "confirmed": 19,
         "deaths": 0,
         "recovered": 0
       },
       "Rockland County": {
-        "active": 4,
+        "active": 142,
         "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
       "Saratoga County": {
-        "active": 2,
+        "active": 142,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Suffolk County": {
-        "active": 1,
+        "active": 142,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Ulster County": {
-        "active": 1,
+        "active": 142,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Westchester County": {
-        "active": 98,
+        "active": 142,
         "confirmed": 98,
         "deaths": 0,
         "recovered": 0
@@ -650,37 +662,37 @@
     },
     "OR": {
       "Douglas County": {
-        "active": 1,
+        "active": 14,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Jackson County": {
-        "active": 2,
+        "active": 14,
         "confirmed": 2,
         "deaths": 0,
         "recovered": 0
       },
       "Klamath County": {
-        "active": 1,
+        "active": 14,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Marion County": {
-        "active": 1,
+        "active": 14,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Umatilla": {
-        "active": 1,
+        "active": 14,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Washington County": {
-        "active": 8,
+        "active": 14,
         "confirmed": 8,
         "deaths": 0,
         "recovered": 0
@@ -694,19 +706,19 @@
     },
     "PA": {
       "Delaware County": {
-        "active": 1,
+        "active": 7,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Montgomery County": {
-        "active": 5,
+        "active": 7,
         "confirmed": 5,
         "deaths": 0,
         "recovered": 0
       },
       "Wayne County": {
-        "active": 1,
+        "active": 7,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -734,19 +746,19 @@
     },
     "SC": {
       "Charleston County": {
-        "active": 1,
+        "active": 6,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Kershaw County": {
-        "active": 4,
+        "active": 6,
         "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
       "Spartanburg County": {
-        "active": 1,
+        "active": 6,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -760,19 +772,19 @@
     },
     "TN": {
       "Davidson County": {
-        "active": 1,
+        "active": 3,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Shelby County": {
-        "active": 1,
+        "active": 3,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Williamson County": {
-        "active": 1,
+        "active": 3,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -786,25 +798,37 @@
     },
     "TX": {
       "Collin County": {
-        "active": 1,
+        "active": 14,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Fort Bend County": {
-        "active": 6,
+        "active": 14,
         "confirmed": 6,
         "deaths": 0,
         "recovered": 0
       },
       "Harris County": {
-        "active": 6,
+        "active": 14,
         "confirmed": 6,
         "deaths": 0,
         "recovered": 0
       },
+      "Lackland": {
+        "active": 14,
+        "confirmed": 0,
+        "deaths": 0,
+        "recovered": 0
+      },
+      "Montgomery County": {
+        "active": 14,
+        "confirmed": 0,
+        "deaths": 0,
+        "recovered": 0
+      },
       "San Antonio": {
-        "active": 1,
+        "active": 14,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
@@ -860,55 +884,55 @@
     },
     "WA": {
       "Clark County": {
-        "active": 1,
+        "active": 108,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Grant County": {
-        "active": 0,
+        "active": 108,
         "confirmed": 1,
         "deaths": 1,
         "recovered": 0
       },
       "Jefferson County": {
-        "active": 1,
+        "active": 108,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "King County": {
-        "active": 65,
+        "active": 108,
         "confirmed": 83,
         "deaths": 17,
         "recovered": 1
       },
       "Kittitas County": {
-        "active": 1,
+        "active": 108,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Pierce County": {
-        "active": 4,
+        "active": 108,
         "confirmed": 4,
         "deaths": 0,
         "recovered": 0
       },
       "Snohomish County": {
-        "active": 30,
+        "active": 108,
         "confirmed": 31,
         "deaths": 1,
         "recovered": 0
       },
       "Spokane County": {
-        "active": 1,
+        "active": 108,
         "confirmed": 1,
         "deaths": 0,
         "recovered": 0
       },
       "Unassigned Location": {
-        "active": 5,
+        "active": 108,
         "confirmed": 5,
         "deaths": 0,
         "recovered": 0
@@ -936,7 +960,7 @@
     }
   },
   "total": {
-    "active": 575,
+    "active": 507,
     "confirmed": 605,
     "deaths": 22,
     "recovered": 8

@@ -21,9 +21,14 @@ def get_raw_data():
 
         for row in data:
             if row["Country/Region"] == "US":
-                last = [*row].pop()
+                all_keys = [*row]
+                last = all_keys.pop()
                 location = row["Province/State"]
                 match = state_re.match(location)
+
+                while row[last] == "":
+                    last = all_keys.pop()
+
                 count = int(row[last])
 
                 all_data["total"][key] += count

@@ -961,8 +961,8 @@
   },
   "total": {
     "active": 507,
-    "confirmed": 605,
-    "deaths": 22,
-    "recovered": 8
+    "confirmed": 1564,
+    "deaths": 50,
+    "recovered": 16
   }
 }

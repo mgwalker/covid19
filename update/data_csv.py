@@ -31,9 +31,8 @@ def get_raw_data():
 
                 count = int(row[last])
 
-                all_data["total"][key] += count
-
                 if match == None:
+                    print(f"{count}: {location}")
                     continue
 
                 location = match.group(1)
@@ -72,7 +71,11 @@ def get_raw_data():
                 - state[location]["deaths"]
                 - state[location]["recovered"]
             )
+
         all_data["total"]["active"] += state["total"]["active"]
+        all_data["total"]["confirmed"] += state["total"]["confirmed"]
+        all_data["total"]["deaths"] += state["total"]["deaths"]
+        all_data["total"]["recovered"] += state["total"]["recovered"]
 
     return all_data
 

@@ -1,0 +1,15 @@
+<!DOCTYPE html5>
+<html lang="en-us">
+  <head>
+    <link rel="stylesheet" href="../uswds-2.5.1/css/uswds.min.css" />
+    <link rel="stylesheet" href="../state.css" />
+  </head>
+  <body class="bg-accent-warm-lighter">
+    <h2>{{state}} has {{positive}} known cases</h2>
+    <ul>
+      <li><strong>Tested:</strong> {{total}}{{^total}}0{{/total}}</li>
+      <li><strong>Negative:</strong> {{negative}}{{^negative}}0{{/negative}}</li>
+      <li><strong>Deaths:</strong> {{death}}{{^death}}0{{/death}}</li>
+    </ul>
+  </body>
+</html>

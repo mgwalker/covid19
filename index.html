@@ -9,15 +9,13 @@
     <header class="usa-header usa-header--basic bg-primary-darker text-white">
       <div class="usa-nav-container">
         <div class="usa-logo" id="basic-logo">
-          <em class="usa-logo__text">507 known actives cases in the United States</em>
+          <em class="usa-logo__text">1448 known cases in the United States</em>
         </div>
       </div>
     </header>
 
     <aside class="bg-accent-warm-lighter">
-      <h2></h2>
-      <ul></ul>
-      <div></div>
+      <iframe src="states/AK.html"></iframe>
     </aside>
 
 
@@ -87,31 +85,9 @@
     <script src="uswds-2.5.1/js/uswds.min.js"></script>
     <script type="text/javascript">
       const load = async () => {
-        const data = await fetch('data.json').then(r => r.json());
-
         const mouseenter = e => {
-          const state = e.target.getAttribute('name');
-          const stateData = data.states[state];
-
-          const active = stateData ? stateData.total.active : 0;
-          document.querySelector('aside h2').innerText = `${state} has ${active} known active case${active === 1 ? '' : 's'}`;
-
-          if(active === 0) {
-            document.querySelector('aside ul').innerText = '';
-            document.querySelector('aside div').innerText = '';
-            return;
-          }
-
-          document.querySelector('aside ul').innerHTML = `
-            <li><strong>Confirmed:</strong> ${stateData.total.confirmed}</li>
-            <li><strong>Recovered:</strong> ${stateData.total.recovered}</li>
-            <li><strong>Deaths:</strong> ${stateData.total.deaths}</li>`;
-
-          document.querySelector('aside div').innerHTML = `
-            <h3>Known active cases by location:</h3>
-            <ul>
-              ${Object.keys(stateData).map(loc => loc === 'total' ? '' : `<li>${loc}: ${stateData[loc].active}</li>`).join("")}
-            </ul>`;
+          const state = e.target.getAttribute('name')
+          document.querySelector('aside iframe').setAttribute('src', `states/${state}.html`)
         }
 
         Array.from(

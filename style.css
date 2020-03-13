@@ -1,9 +1,10 @@
-aside {
+aside iframe {
   position: fixed;
+  border: 0;
   top: 0;
   width: 20vw;
   height: 100vh;
-  padding: 1em;
+  padding: 0;
 }
 
 header {

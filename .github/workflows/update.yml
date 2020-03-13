@@ -15,7 +15,7 @@ jobs:
           pip install pipenv
           pipenv install --ignore-pipfile
       - name: update map data
-        run: pipenv run python update/main.py
+        run: pipenv run python main.py
       - name: commit
         run: |
           if [[ `git status --porcelain` ]]

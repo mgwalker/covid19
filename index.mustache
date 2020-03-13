@@ -17,7 +17,7 @@
     </header>
 
     <aside class="bg-accent-warm-lighter">
-      <iframe src=""></iframe>
+      <div id="state_data"></div>
       <hr />
       <h2>US Projections</h2>
       Based on recent ({{recent_days}}-day) change:
@@ -103,9 +103,19 @@
     <script src="uswds-2.5.1/js/uswds.min.js"></script>
     <script type="text/javascript">
       const load = async () => {
+        const stateData = {{&state_data}}
+
         const mouseenter = e => {
-          const state = e.target.getAttribute('name')
-          document.querySelector('aside iframe').setAttribute('src', `states/${state}.html`)
+          const state = e.target.getAttribute('name');
+          const { death, positive, negative, total } = stateData[state];
+          
+          const html = `<h2>${state} has ${positive || 0} known cases</h2>
+                        <ul>
+                          <li><strong>Tested:</strong> ${total || 0}</li>
+                          <li><strong>Negative:</strong> ${negative || 0}</li>
+                          <li><strong>Deaths:</strong> ${death || 0}</li>
+                        </ul>`;
+          document.querySelector('#state_data').innerHTML = html;
         }
 
         Array.from(

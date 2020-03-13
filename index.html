@@ -17,7 +17,7 @@
     </header>
 
     <aside class="bg-accent-warm-lighter">
-      <iframe src=""></iframe>
+      <div id="state_data"></div>
       <hr />
       <h2>US Projections</h2>
       Based on recent (3-day) change:
@@ -103,9 +103,19 @@
     <script src="uswds-2.5.1/js/uswds.min.js"></script>
     <script type="text/javascript">
       const load = async () => {
+        const stateData = {"AK": {"death": null, "positive": 1, "negative": 59, "total": 60}, "AL": {"death": null, "positive": 1, "negative": 11, "total": 12}, "AR": {"death": null, "positive": 9, "negative": 30, "total": 61}, "AZ": {"death": 0, "positive": 9, "negative": 94, "total": 143}, "CA": {"death": 5, "positive": 252, "negative": 916, "total": 1168}, "CO": {"death": null, "positive": 72, "negative": 524, "total": 596}, "CT": {"death": null, "positive": 6, "negative": 99, "total": 105}, "DC": {"death": null, "positive": 10, "negative": 20, "total": 30}, "DE": {"death": null, "positive": 4, "negative": 36, "total": 72}, "FL": {"death": 2, "positive": 50, "negative": 478, "total": 749}, "GA": {"death": 1, "positive": 42, "negative": null, "total": 42}, "HI": {"death": null, "positive": 2, "negative": null, "total": 2}, "IA": {"death": null, "positive": 16, "negative": 83, "total": 128}, "ID": {"death": null, "positive": 0, "negative": 131, "total": 131}, "IL": {"death": null, "positive": 32, "negative": 294, "total": 418}, "IN": {"death": null, "positive": 12, "negative": 61, "total": 73}, "KS": {"death": null, "positive": 6, "negative": 93, "total": 99}, "KY": {"death": null, "positive": 11, "negative": 107, "total": 118}, "LA": {"death": null, "positive": 36, "negative": 37, "total": 73}, "MA": {"death": null, "positive": 123, "negative": 92, "total": 215}, "MD": {"death": null, "positive": 17, "negative": 94, "total": 111}, "ME": {"death": null, "positive": 3, "negative": 91, "total": 111}, "MI": {"death": null, "positive": 16, "negative": 133, "total": 175}, "MN": {"death": null, "positive": 14, "negative": 541, "total": 555}, "MO": {"death": null, "positive": 2, "negative": 71, "total": 73}, "MS": {"death": null, "positive": 4, "negative": 38, "total": 42}, "MT": {"death": null, "positive": 1, "negative": 55, "total": 56}, "NC": {"death": null, "positive": 15, "negative": 86, "total": 101}, "ND": {"death": 0, "positive": 1, "negative": 39, "total": 52}, "NE": {"death": null, "positive": 13, "negative": 80, "total": 126}, "NH": {"death": null, "positive": 6, "negative": 94, "total": 121}, "NJ": {"death": 1, "positive": 50, "negative": null, "total": 130}, "NM": {"death": null, "positive": 10, "negative": 190, "total": 200}, "NV": {"death": null, "positive": 11, "negative": 168, "total": 179}, "NY": {"death": null, "positive": 421, "negative": 2779, "total": 3200}, "OH": {"death": null, "positive": 13, "negative": 50, "total": 222}, "OK": {"death": null, "positive": 3, "negative": 36, "total": 76}, "OR": {"death": null, "positive": 30, "negative": 337, "total": 524}, "PA": {"death": null, "positive": 33, "negative": 140, "total": 303}, "RI": {"death": null, "positive": 14, "negative": 142, "total": 185}, "SC": {"death": null, "positive": 12, "negative": 75, "total": 87}, "SD": {"death": null, "positive": 9, "negative": 73, "total": 93}, "TN": {"death": null, "positive": 26, "negative": 116, "total": 142}, "TX": {"death": null, "positive": 39, "negative": null, "total": 39}, "UT": {"death": null, "positive": 6, "negative": 131, "total": 137}, "VA": {"death": null, "positive": 30, "negative": 117, "total": 147}, "VT": {"death": null, "positive": 2, "negative": 142, "total": 144}, "WA": {"death": 37, "positive": 568, "negative": 6001, "total": 6569}, "WI": {"death": null, "positive": 19, "negative": 169, "total": 188}, "WV": {"death": null, "positive": 0, "negative": 17, "total": 21}, "WY": {"death": null, "positive": 1, "negative": null, "total": 1}}
+
         const mouseenter = e => {
-          const state = e.target.getAttribute('name')
-          document.querySelector('aside iframe').setAttribute('src', `states/${state}.html`)
+          const state = e.target.getAttribute('name');
+          const { death, positive, negative, total } = stateData[state];
+          
+          const html = `<h2>${state} has ${positive || 0} known cases</h2>
+                        <ul>
+                          <li><strong>Tested:</strong> ${total || 0}</li>
+                          <li><strong>Negative:</strong> ${negative || 0}</li>
+                          <li><strong>Deaths:</strong> ${death || 0}</li>
+                        </ul>`;
+          document.querySelector('#state_data').innerHTML = html;
         }
 
         Array.from(

@@ -1,4 +1,5 @@
 import chevron
+import json
 from math import log
 import requests
 
@@ -48,23 +49,23 @@ projections_recent = {
 
 states = requests.get("https://covidtracking.com/api/states").json()
 
-positive = [state["positive"] for state in states]
-state_max = max(positive)
+state_max = max([state["positive"] for state in states])
 
+state_data = {}
 with open("states.css", "w") as css:
-    with open("states.mustache", "r") as template:
-        for state in states:
-            with open(f"""states/{state["state"]}.html""", "w") as f:
-                f.write(chevron.render(template, state))
-                f.close()
-            template.seek(0)
+    for state in states:
+        state_data[state["state"]] = {
+            "death": state["death"],
+            "positive": state["positive"],
+            "negative": state["negative"],
+            "total": state["total"],
+        }
 
-            proportion = state["positive"] / state_max
-            not_red = round(211 * (1 - proportion))
-            css.write(
-                f""".{state["state"]}, .{state["state"]} * {{ fill: rgb(211, {not_red}, {not_red}); }}\n"""
-            )
-        template.close()
+        proportion = state["positive"] / state_max
+        not_red = round(211 * (1 - proportion))
+        css.write(
+            f'.{state["state"]}, .{state["state"]} * {{ fill: rgb(211, {not_red}, {not_red}); }}\n'
+        )
 css.close()
 
 with open("index.mustache", "r") as template:
@@ -80,6 +81,7 @@ with open("index.mustache", "r") as template:
                     "projections_all": projections_all,
                     "projections_recent": projections_recent,
                     "recent_days": recent_days,
+                    "state_data": json.dumps(state_data),
                     "total": f"{us_total:,}",
                 },
             )

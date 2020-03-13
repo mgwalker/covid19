@@ -1,6 +1,23 @@
 import chevron
 import requests
 
+time_series = requests.get("https://covidtracking.com/api/us/daily").json()
+time_series = [
+    {"date": date["date"], "total": date["positive"]} for date in time_series
+]
+
+prev = 0
+for date in time_series:
+    if prev == 0:
+        date["change"] = 0
+        prev = date["total"]
+        continue
+
+    date["change"] = round((date["total"] / prev) - 1, 4) * 100
+    prev = date["total"]
+
+latest_change = time_series.pop()["change"]
+
 states = requests.get("https://covidtracking.com/api/states").json()
 
 positive = [state["positive"] for state in states]
@@ -25,6 +42,10 @@ css.close()
 
 with open("index.mustache", "r") as template:
     with open("index.html", "w") as index:
-        index.write(chevron.render(template, {"total": us_total}))
+        index.write(
+            chevron.render(
+                template, {"percent_change": latest_change, "total": us_total}
+            )
+        )
         index.close()
     template.close()

@@ -16,10 +16,12 @@ for date in time_series:
         continue
 
     date["change_percent"] = (date["total"] / prev) - 1
-    date["change"] = round((date["total"] / prev) - 1, 4) * 100
+    date["change"] = round(((date["total"] / prev) - 1) * 100, 2)
     prev = date["total"]
 
-latest_change = time_series[len(time_series) - 1]["change"]
+latest_change = time_series[-1]["change"]
+prev = time_series[-2]["total"]
+us_total = time_series[-1]["total"]
 
 daily_average_change = sum([day["change_percent"] for day in time_series]) / (
     len(time_series) - 1
@@ -47,7 +49,6 @@ projections_recent = {
 states = requests.get("https://covidtracking.com/api/states").json()
 
 positive = [state["positive"] for state in states]
-us_total = sum(positive)
 state_max = max(positive)
 
 with open("states.css", "w") as css:
@@ -75,6 +76,7 @@ with open("index.mustache", "r") as template:
                     "doubling": doubling,
                     "doubling_recent": doubling_recent,
                     "percent_change": latest_change,
+                    "prev": f"{prev:,}",
                     "projections_all": projections_all,
                     "projections_recent": projections_recent,
                     "recent_days": recent_days,

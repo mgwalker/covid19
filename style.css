@@ -1,3 +1,7 @@
+div.usa-logo {
+  line-height: 0.5;
+}
+
 aside {
   position: fixed;
   top: 0;

@@ -17,4 +17,6 @@ jobs:
       - name: update map data
         run: pipenv run python main.py
       - name: commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
         run: ./.github/workflows/git.sh

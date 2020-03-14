@@ -27,4 +27,7 @@ svg {
   width: 80vw;
 }
 
-.state, .state * { fill: rgb(211, 211, 211); }
+.state, .state * {
+  cursor: pointer;
+  fill: rgb(211, 211, 211);
+}

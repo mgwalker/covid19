@@ -7,7 +7,7 @@
 .CT, .CT * { fill: rgb(211, 207, 207); }
 .DC, .DC * { fill: rgb(211, 207, 207); }
 .DE, .DE * { fill: rgb(211, 210, 210); }
-.FL, .FL * { fill: rgb(211, 192, 192); }
+.FL, .FL * { fill: rgb(211, 182, 182); }
 .GA, .GA * { fill: rgb(211, 195, 195); }
 .HI, .HI * { fill: rgb(211, 210, 210); }
 .IA, .IA * { fill: rgb(211, 205, 205); }
@@ -48,4 +48,4 @@
 .WA, .WA * { fill: rgb(211, 0, 0); }
 .WI, .WI * { fill: rgb(211, 204, 204); }
 .WV, .WV * { fill: rgb(211, 211, 211); }
-.WY, .WY * { fill: rgb(211, 211, 211); }
+.WY, .WY * { fill: rgb(211, 210, 210); }

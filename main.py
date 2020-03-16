@@ -62,9 +62,9 @@ with open("states.css", "w") as css:
         }
 
         proportion = state["positive"] / state_max
-        not_red = round(211 * (1 - proportion))
+        not_blue = round(211 * (1 - proportion))
         css.write(
-            f'.{state["state"]}, .{state["state"]} * {{ fill: rgb(211, {not_red}, {not_red}); }}\n'
+            f'.{state["state"]}, .{state["state"]} * {{ fill: rgb({not_blue}, {not_blue}, 211); }}\n'
         )
 css.close()
 

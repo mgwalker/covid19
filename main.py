@@ -3,6 +3,8 @@ import json
 from math import log
 import requests
 
+from state_data import names, population
+
 time_series = requests.get("https://covidtracking.com/api/us/daily").json()
 time_series = [
     {"date": date["date"], "total": date["positive"]} for date in time_series
@@ -50,22 +52,34 @@ projections_recent = {
 states = requests.get("https://covidtracking.com/api/states").json()
 
 state_max = max([state["positive"] for state in states])
+proportions = [state["positive"] / population[state["state"]] for state in states]
+state_max = max(proportions)
 
 state_data = {}
 with open("states.css", "w") as css:
     for state in states:
+        proportion = state["positive"] / population[state["state"]]
+        scaled_proportion = proportion / state_max
+
+        not_blue = round(211 * (1 - scaled_proportion))
+        css.write(
+            f'.{state["state"]}, .{state["state"]} * {{ fill: rgb({not_blue}, {not_blue}, 211); }}\n'
+        )
+
+        per = 1
+        while proportion < 1 and proportion > 0:
+            per *= 10
+            proportion *= 10
+
         state_data[state["state"]] = {
             "death": state["death"],
+            "name": names[state["state"]],
             "positive": state["positive"],
+            "proportion": f"{round(proportion)} per {per:,}",
             "negative": state["negative"],
             "total": state["total"],
         }
 
-        proportion = state["positive"] / state_max
-        not_blue = round(211 * (1 - proportion))
-        css.write(
-            f'.{state["state"]}, .{state["state"]} * {{ fill: rgb({not_blue}, {not_blue}, 211); }}\n'
-        )
 css.close()
 
 with open("index.mustache", "r") as template:

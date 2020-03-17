@@ -107,9 +107,10 @@
 
         const mouseenter = e => {
           const state = e.target.getAttribute('name');
-          const { death, positive, negative, total } = stateData[state];
+          const { death, name, positive, proportion, negative, total } = stateData[state];
           
-          const html = `<h2>${state} has ${positive || 0} known cases</h2>
+          const html = `<h2>${name} has ${positive || 0} known cases</h2>
+                        That's about ${proportion}.
                         <ul>
                           <li><strong>Tested:</strong> ${total || 0}</li>
                           <li><strong>Negative:</strong> ${negative || 0}</li>

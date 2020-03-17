@@ -31,3 +31,13 @@ svg {
   cursor: pointer;
   fill: rgb(211, 211, 211);
 }
+
+.state:hover, .state > circle:hover {
+  stroke: #999;
+  stroke-width: 3;
+}
+
+.state.picked, .state.picked > circle {
+  stroke: green;
+  stroke-width: 3;
+}

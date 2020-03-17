@@ -117,6 +117,14 @@
                           <li><strong>Deaths:</strong> ${death || 0}</li>
                         </ul>`;
           document.querySelector('#state_data').innerHTML = html;
+
+          const old = document.querySelector('svg .state.picked');
+          if (old) {
+            old.setAttribute('class', old.getAttribute('class').replace(' picked', ''));
+          }
+          
+          const svg = document.querySelector(`svg .state.${state}`);
+          svg.setAttribute('class', `${svg.getAttribute('class')} picked`);
         }
 
         Array.from(

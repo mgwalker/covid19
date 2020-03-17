@@ -19,16 +19,21 @@
     <aside class="bg-accent-warm-lighter">
       <div id="state_data"></div>
       <hr />
-      <h2>US Projections</h2>
+      <h4>US Projections</h4>
+
+      These projections are unrealistic and simple. They assume nothing changes.
+      These are only meant as a very rough idea of what <em>could</em> happen,
+      and to provide a sense of how things have changed recently.
+      <br/><br/>
       Based on recent ({{recent_days}}-day) change:
-      <h3>Doubling about every {{doubling_recent}} days</h3>
+      <h4>Doubling about every {{doubling_recent}} days</h4>
       <ul>
         <li><strong>10 days</strong>: {{projections_recent.10_days}}</li>
         <li><strong>20 days</strong>: {{projections_recent.20_days}}</li>
         <li><strong>30 days</strong>: {{projections_recent.30_days}}</li>
       </ul>
       Based on all-time change:
-      <h3>Doubling about every {{doubling}} days</h3>
+      <h4>Doubling about every {{doubling}} days</h4>
       <ul>
         <li><strong>10 days</strong>: {{projections_all.10_days}}</li>
         <li><strong>20 days</strong>: {{projections_all.20_days}}</li>
@@ -109,7 +114,7 @@
           const state = e.target.getAttribute('name');
           const { death, name, positive, proportion, negative, total } = stateData[state];
           
-          const html = `<h2>${name} has ${positive || 0} known cases</h2>
+          const html = `<h4>${name} has ${positive || 0} known cases</h4>
                         That's about ${proportion}.
                         <ul>
                           <li><strong>Tested:</strong> ${total || 0}</li>

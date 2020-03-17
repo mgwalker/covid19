@@ -9,13 +9,11 @@ aside {
   width: 20vw;
   height: 100vh;
   padding: 1em;
+  overflow-y: auto;
 }
 
-aside iframe {
-  padding: 1em;
-  margin: -1em;
-  width: 20vw;
-  border: 0;
+aside h4 {
+  margin: 0;
 }
 
 header {

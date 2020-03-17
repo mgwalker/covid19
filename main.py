@@ -55,8 +55,6 @@ state_max = max([state["positive"] for state in states])
 proportions = [state["positive"] / population[state["state"]] for state in states]
 state_max = max(proportions)
 
-print(sum([state["positive"] for state in states]))
-
 state_data = {}
 with open("states.css", "w") as css:
     for state in states:
@@ -74,12 +72,12 @@ with open("states.css", "w") as css:
             proportion *= 10
 
         state_data[state["state"]] = {
-            "death": state["death"],
+            "death": f'{state["death"] or 0:,}',
             "name": names[state["state"]],
-            "positive": state["positive"],
+            "positive": f'{state["positive"] or 0:,}',
             "proportion": f"{round(proportion)} per {per:,}",
-            "negative": state["negative"],
-            "total": state["total"],
+            "negative": f'{state["negative"] or 0:,}',
+            "total": f'{state["total"] or 0:,}',
         }
 
 css.close()

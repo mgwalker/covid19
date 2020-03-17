@@ -125,6 +125,8 @@
           
           const svg = document.querySelector(`svg .state.${state}`);
           svg.setAttribute('class', `${svg.getAttribute('class')} picked`);
+          svg.remove();
+          document.querySelector('svg g.outlines').appendChild(svg)
         }
 
         Array.from(

@@ -55,6 +55,8 @@ state_max = max([state["positive"] for state in states])
 proportions = [state["positive"] / population[state["state"]] for state in states]
 state_max = max(proportions)
 
+print(sum([state["positive"] for state in states]))
+
 state_data = {}
 with open("states.css", "w") as css:
     for state in states:

@@ -126,12 +126,50 @@
           const old = document.querySelector('svg .state.picked');
           if (old) {
             old.setAttribute('class', old.getAttribute('class').replace(' picked', ''));
+            old.setAttribute('transform', '');
           }
           
           const svg = document.querySelector(`svg .state.${state}`);
           svg.setAttribute('class', `${svg.getAttribute('class')} picked`);
           svg.remove();
-          document.querySelector('svg g.outlines').appendChild(svg)
+          document.querySelector('svg g.outlines').appendChild(svg);
+
+          if (state === 'DC') {
+            return;
+          }
+
+          const data = svg.getAttribute("d").split(' ');
+          let minX = Infinity;
+          let minY = Infinity;
+
+          let x = 0;
+          let y = 0;
+
+          data.forEach(instruction => {
+            const bits = /([A-Za-z]?)([\S]+)(z?)/.exec(instruction);
+            const coords = bits[2].split(',').map(n => +n);
+
+            if (bits[1] === 'M') {
+              x = coords[0];
+              y = coords[1];
+            } else if (bits[3] === 'z') {
+              return;
+            } else {
+              x += coords[0];
+              y += coords[1];
+            }
+
+            if (x < minX) {
+              minX = x;
+            }
+            if (y < minY) {
+              minY = y;
+            }
+          });
+
+          const scale = 1.1;
+
+          svg.setAttribute('transform', `matrix(${scale}, 0, 0, ${scale}, ${minX - scale * minX}, ${minY - scale * minY})`);
         }
 
         Array.from(

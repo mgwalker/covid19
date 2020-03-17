@@ -52,8 +52,18 @@ projections_recent = {
 states = requests.get("https://covidtracking.com/api/states").json()
 
 state_max = max([state["positive"] for state in states])
-proportions = [state["positive"] / population[state["state"]] for state in states]
+proportions = [
+    state["positive"] / population[state["state"]]
+    for state in states
+    if state["positive"] > 0
+]
 state_max = max(proportions)
+state_min = min(proportions)
+
+per = 1
+while state_min < 0.6 and state_min > 0:
+    per *= 10
+    state_min *= 10
 
 state_data = {}
 with open("states.css", "w") as css:
@@ -66,16 +76,16 @@ with open("states.css", "w") as css:
             f'.{state["state"]}, .{state["state"]} * {{ fill: rgb({not_blue}, {not_blue}, 211); }}\n'
         )
 
-        per = 1
-        while proportion < 1 and proportion > 0:
-            per *= 10
-            proportion *= 10
+        # per = 1
+        # while proportion < 1 and proportion > 0:
+        #     per *= 10
+        #     proportion *= 10
 
         state_data[state["state"]] = {
             "death": f'{state["death"] or 0:,}',
             "name": names[state["state"]],
             "positive": f'{state["positive"] or 0:,}',
-            "proportion": f"{round(proportion)} per {per:,}",
+            "proportion": f"{round(proportion * per)} in {per:,}",
             "negative": f'{state["negative"] or 0:,}',
             "total": f'{state["total"] or 0:,}',
         }

@@ -5,10 +5,28 @@ import requests
 
 from state_data import names, population
 
+us_population = sum(population.values())
+
 time_series = requests.get("https://covidtracking.com/api/us/daily").json()
 time_series = [
     {"date": date["date"], "total": date["positive"]} for date in time_series
 ]
+
+states = requests.get("https://covidtracking.com/api/states").json()
+
+state_max = max([state["positive"] for state in states])
+proportions = [
+    state["positive"] / population[state["state"]]
+    for state in states
+    if state["positive"] > 0
+]
+state_max = max(proportions)
+state_min = min(proportions)
+
+per = 1
+while state_min < 0.6 and state_min > 0 and per < 1000000:
+    per *= 10
+    state_min *= 10
 
 prev = 0
 for date in time_series:
@@ -39,31 +57,15 @@ doubling = round(log(2, 1 + daily_average_change), 2)
 doubling_recent = round(log(2, 1 + recent_average_change), 2)
 
 projections_all = {
-    "10_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 10)):,}',
-    "20_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 20)):,}',
-    "30_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 30)):,}',
+    "10_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 10) / us_population * per):,}',
+    "20_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 20) / us_population * per):,}',
+    "30_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 30) / us_population * per):,}',
 }
 projections_recent = {
-    "10_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 10)):,}',
-    "20_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 20)):,}',
-    "30_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 30)):,}',
+    "10_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 10) / us_population * per):,}',
+    "20_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 20) / us_population * per):,}',
+    "30_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 30) / us_population * per):,}',
 }
-
-states = requests.get("https://covidtracking.com/api/states").json()
-
-state_max = max([state["positive"] for state in states])
-proportions = [
-    state["positive"] / population[state["state"]]
-    for state in states
-    if state["positive"] > 0
-]
-state_max = max(proportions)
-state_min = min(proportions)
-
-per = 1
-while state_min < 0.6 and state_min > 0:
-    per *= 10
-    state_min *= 10
 
 state_data = {}
 with open("states.css", "w") as css:
@@ -76,18 +78,11 @@ with open("states.css", "w") as css:
             f'.{state["state"]}, .{state["state"]} * {{ fill: rgb({not_blue}, {not_blue}, 211); }}\n'
         )
 
-        # per = 1
-        # while proportion < 1 and proportion > 0:
-        #     per *= 10
-        #     proportion *= 10
-
         state_data[state["state"]] = {
             "death": f'{state["death"] or 0:,}',
             "name": names[state["state"]],
-            "positive": f'{state["positive"] or 0:,}',
-            "proportion": f"{round(proportion * per)} in {per:,}",
-            "negative": f'{state["negative"] or 0:,}',
-            "total": f'{state["total"] or 0:,}',
+            "proportion": f"{round(proportion * per, 2)} cases per {per:,} people",
+            "test_proportion": f'{round(state["total"] / population[state["state"]] * per)} per {per:,} people',
         }
 
 css.close()
@@ -100,13 +95,15 @@ with open("index.mustache", "r") as template:
                 {
                     "doubling": doubling,
                     "doubling_recent": doubling_recent,
+                    "per": f"{per:,}",
                     "percent_change": latest_change,
-                    "prev": f"{prev:,}",
+                    "prev": f"{round(prev / us_population * per, 2)}",
                     "projections_all": projections_all,
                     "projections_recent": projections_recent,
                     "recent_days": recent_days,
                     "state_data": json.dumps(state_data),
                     "total": f"{us_total:,}",
+                    "total": f"{round(us_total / us_population * per, 2)} cases per {per:,} people",
                 },
             )
         )

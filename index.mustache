@@ -9,9 +9,9 @@
     <header class="usa-header usa-header--basic bg-primary-darker text-white">
       <div class="usa-nav-container">
         <div class="usa-logo" id="basic-logo">
-          <em class="usa-logo__text">{{total}} known cases in the United States</em>
+          <em class="usa-logo__text">About {{total}} known in the United States</em>
           <br/>
-          <small>(was {{prev}} / {{percent_change}}% daily change)</small>
+          <small>was {{prev}} | {{percent_change}}% daily change</small>
         </div>
       </div>
     </header>
@@ -25,14 +25,16 @@
       changes, but in real life, social, political, environmental, and other
       factors will all influence the total number of infections.
       <br/><br/>
-      Based on recent ({{recent_days}}-day) change:
+      Based on the last {{recent_days}} days:<br/>
+      (cases per {{per}} people)
       <h4>Doubling about every {{doubling_recent}} days</h4>
       <ul>
         <li><strong>10 days</strong>: {{projections_recent.10_days}}</li>
         <li><strong>20 days</strong>: {{projections_recent.20_days}}</li>
         <li><strong>30 days</strong>: {{projections_recent.30_days}}</li>
       </ul>
-      Based on all-time change:
+      Based on all-time change:<br/>
+      (cases per {{per}} people)
       <h4>Doubling about every {{doubling}} days</h4>
       <ul>
         <li><strong>10 days</strong>: {{projections_all.10_days}}</li>
@@ -112,13 +114,11 @@
 
         const mouseenter = e => {
           const state = e.target.getAttribute('name');
-          const { death, name, positive, proportion, negative, total } = stateData[state];
+          const { death, name, positive, proportion, negative, test_proportion, total } = stateData[state];
           
-          const html = `<h4>${name} has ${positive || 0} known cases</h4>
-                        That's about ${proportion}.
+          const html = `<h4>${name} has about ${proportion}</h4>
                         <ul>
-                          <li><strong>Tested:</strong> ${total || 0}</li>
-                          <li><strong>Negative:</strong> ${negative || 0}</li>
+                          <li><strong>Tested:</strong> about ${test_proportion}</li>
                           <li><strong>Deaths:</strong> ${death || 0}</li>
                         </ul>`;
           document.querySelector('#state_data').innerHTML = html;

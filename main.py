@@ -14,11 +14,17 @@ time_series = [
 
 states = requests.get("https://covidtracking.com/api/states").json()
 
-state_max = max([state["positive"] for state in states])
+state_max = max(
+    [
+        state["positive"]
+        for state in states
+        if state["positive"] != None and state["positive"] > 0
+    ]
+)
 proportions = [
     state["positive"] / population[state["state"]]
     for state in states
-    if state["positive"] > 0
+    if state["positive"] != None and state["positive"] > 0
 ]
 state_max = max(proportions)
 state_min = min(proportions)
@@ -70,7 +76,7 @@ projections_recent = {
 state_data = {}
 with open("states.css", "w") as css:
     for state in states:
-        proportion = state["positive"] / population[state["state"]]
+        proportion = (state["positive"] or 0) / population[state["state"]]
         scaled_proportion = proportion / state_max
 
         not_blue = round(211 * (1 - scaled_proportion))

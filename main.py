@@ -63,14 +63,14 @@ doubling = round(log(2, 1 + daily_average_change), 2)
 doubling_recent = round(log(2, 1 + recent_average_change), 2)
 
 projections_all = {
-    "10_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 10) / us_population * per):,}',
-    "20_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 20) / us_population * per):,}',
-    "30_days": f'{round(time_series[-1]["total"] * ((1 + daily_average_change) ** 30) / us_population * per):,}',
+    "thousandth": f'{round(log(((per / 1000) * us_population) / (per * time_series[-1]["total"])) / log(1 + daily_average_change)):,}',
+    "hundredth": f'{round(log(((per / 100) * us_population) / (per * time_series[-1]["total"])) / log(1 + daily_average_change)):,}',
+    "tenth": f'{round(log(((per / 10) * us_population) / (per * time_series[-1]["total"])) / log(1 + daily_average_change)):,}',
 }
 projections_recent = {
-    "10_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 10) / us_population * per):,}',
-    "20_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 20) / us_population * per):,}',
-    "30_days": f'{round(time_series[-1]["total"] * ((1 + recent_average_change) ** 30) / us_population * per):,}',
+    "thousandth": f'{round(log(((per / 1000) * us_population) / (per * time_series[-1]["total"])) / log(1 + recent_average_change)):,}',
+    "hundredth": f'{round(log(((per / 100) * us_population) / (per * time_series[-1]["total"])) / log(1 + recent_average_change)):,}',
+    "tenth": f'{round(log(((per / 10) * us_population) / (per * time_series[-1]["total"])) / log(1 + recent_average_change)):,}',
 }
 
 state_data = {}

@@ -45,12 +45,12 @@
 .UT, .UT * { fill: rgb(196, 196, 211); }
 .VA, .VA * { fill: rgb(204, 204, 211); }
 .VT, .VT * { fill: rgb(188, 188, 211); }
-.WA, .WA * { fill: rgb(147, 147, 211); }
+.WA, .WA * { fill: rgb(140, 140, 211); }
 .WI, .WI * { fill: rgb(193, 193, 211); }
 .WV, .WV * { fill: rgb(209, 209, 211); }
-.WY, .WY * { fill: rgb(200, 200, 211); }
+.WY, .WY * { fill: rgb(199, 199, 211); }
 .PR, .PR * { fill: rgb(209, 209, 211); }
 .AS, .AS * { fill: rgb(211, 211, 211); }
 .GU, .GU * { fill: rgb(167, 167, 211); }
 .MP, .MP * { fill: rgb(211, 211, 211); }
-.VI, .VI * { fill: rgb(196, 196, 211); }
+.VI, .VI * { fill: rgb(167, 167, 211); }

@@ -10,7 +10,7 @@ us_population = sum(population.values())
 time_series = requests.get("https://covidtracking.com/api/us/daily").json()
 time_series = [
     {"date": date["date"], "total": date["positive"]} for date in time_series
-]
+][::-1]
 
 states = requests.get("https://covidtracking.com/api/states").json()
 

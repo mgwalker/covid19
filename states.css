@@ -9,7 +9,7 @@
 .DE, .DE * { fill: rgb(195, 195, 211); }
 .FL, .FL * { fill: rgb(199, 199, 211); }
 .GA, .GA * { fill: rgb(194, 194, 211); }
-.HI, .HI * { fill: rgb(203, 203, 211); }
+.HI, .HI * { fill: rgb(202, 202, 211); }
 .IA, .IA * { fill: rgb(205, 205, 211); }
 .ID, .ID * { fill: rgb(202, 202, 211); }
 .IL, .IL * { fill: rgb(191, 191, 211); }
@@ -51,6 +51,6 @@
 .WY, .WY * { fill: rgb(200, 200, 211); }
 .PR, .PR * { fill: rgb(209, 209, 211); }
 .AS, .AS * { fill: rgb(211, 211, 211); }
-.GU, .GU * { fill: rgb(181, 181, 211); }
+.GU, .GU * { fill: rgb(175, 175, 211); }
 .MP, .MP * { fill: rgb(211, 211, 211); }
 .VI, .VI * { fill: rgb(189, 189, 211); }

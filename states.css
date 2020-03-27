@@ -24,11 +24,11 @@
 .MN, .MN * { fill: rgb(204, 204, 211); }
 .MO, .MO * { fill: rgb(202, 202, 211); }
 .MS, .MS * { fill: rgb(193, 193, 211); }
-.MT, .MT * { fill: rgb(202, 202, 211); }
+.MT, .MT * { fill: rgb(200, 200, 211); }
 .NC, .NC * { fill: rgb(204, 204, 211); }
 .ND, .ND * { fill: rgb(203, 203, 211); }
 .NE, .NE * { fill: rgb(207, 207, 211); }
-.NH, .NH * { fill: rgb(200, 200, 211); }
+.NH, .NH * { fill: rgb(198, 198, 211); }
 .NJ, .NJ * { fill: rgb(126, 126, 211); }
 .NM, .NM * { fill: rgb(204, 204, 211); }
 .NV, .NV * { fill: rgb(192, 192, 211); }
@@ -51,6 +51,6 @@
 .WY, .WY * { fill: rgb(200, 200, 211); }
 .PR, .PR * { fill: rgb(209, 209, 211); }
 .AS, .AS * { fill: rgb(211, 211, 211); }
-.GU, .GU * { fill: rgb(181, 181, 211); }
+.GU, .GU * { fill: rgb(178, 178, 211); }
 .MP, .MP * { fill: rgb(211, 211, 211); }
 .VI, .VI * { fill: rgb(193, 193, 211); }

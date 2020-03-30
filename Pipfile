@@ -6,10 +6,13 @@ verify_ssl = true
 [dev-packages]
 black = "*"
 flake8 = "*"
+jupyter = "*"
 
 [packages]
 requests = ">=2.23.0<3"
 chevron = "*"
+seaborn = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.8"

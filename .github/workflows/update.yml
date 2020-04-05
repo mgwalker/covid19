@@ -2,7 +2,7 @@ name: update
 
 on:
   schedule:
-    - cron: '37 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   update:
@@ -14,8 +14,8 @@ jobs:
         run: |
           pip install pipenv
           pipenv install --ignore-pipfile
-      - name: update map data
-        run: pipenv run python main.py
+      - name: update the site
+        run: pipenv run python build/main.py
       - name: commit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}

@@ -1,28 +1,5 @@
-div.usa-logo {
-  line-height: 0.5;
-}
-
-aside {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20vw;
-  height: 100vh;
-  padding: 1em;
-  overflow-y: auto;
-}
-
-aside h4 {
-  margin: 0;
-}
-
-header {
-  margin-left: 20vw;
-}
-
-svg {
-  margin-left: 20vw;
-  width: 80vw;
+h1 small {
+  font-weight:normal;
 }
 
 .state, .state * {
@@ -38,4 +15,20 @@ svg {
 .state.picked, .state.picked > circle {
   stroke: black;
   filter: drop-shadow( 0px 0px 15px rgba(0, 0, 0, .7));
+}
+
+.chart-confirmed, .chart-tests, .chart-deaths {
+  font-weight: bold;
+}
+
+.chart-confirmed {
+  color: #0088FF;
+}
+
+.chart-tests {
+  color: #FF8800;
+}
+
+.chart-deaths {
+  color: black;
 }

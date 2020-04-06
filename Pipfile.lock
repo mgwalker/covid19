@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6d784410d24399f9c098071aa70238fdddbfe80cb0e341bb330f856ff02618bd"
+            "sha256": "52552c894fe5f9a671f5603c9dd58a5e2feb8852667b7dda445697474339986b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -25,10 +25,10 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:b0e07438175de96ab74de9ab5dc40985ef8b44a41e9636a2000099dc3b670ddd",
-                "sha256:e68768546aa055623812ada64aec5e1f02ca20a9e7f3d3432dd8b0f35a6e7951"
+                "sha256:1d987a998c75633c40847cc966fcf5904906c920a7f17ef374f5aa4282abd304",
+                "sha256:51fcb31174be6e6664c5f69e3e1691a2d72a1a12e90f872cbdb1567eb47b6519"
             ],
-            "version": "==2020.4.5"
+            "version": "==2020.4.5.1"
         },
         "chardet": {
             "hashes": [
@@ -200,22 +200,6 @@
             "index": "pypi",
             "version": "==1.0.3"
         },
-        "plotly": {
-            "hashes": [
-                "sha256:61f34955f04201a1ebcd59feaafa7eae7c16ef9b3f439870be01fb85a949292f",
-                "sha256:ac0ca0854350bfcd833f3a8eb08aa50e184660502bb46fe907701f896ff349bd"
-            ],
-            "index": "pypi",
-            "version": "==4.6.0"
-        },
-        "plotly-geo": {
-            "hashes": [
-                "sha256:422359c859fc1bccfd5baaffd82d23f4ea06686c1822e72f76270c9d7f82d70e",
-                "sha256:9f695ca0a48494c821d8ab612d33b092bc64ec8de86d021c5209cc0b217aa9ce"
-            ],
-            "index": "pypi",
-            "version": "==1.0.0"
-        },
         "pyparsing": {
             "hashes": [
                 "sha256:4c830582a84fb022400b85429791bc551f1f4871c33f23e44f353119e92f969f",
@@ -250,13 +234,6 @@
             ],
             "version": "==2.6.0"
         },
-        "pyshp": {
-            "hashes": [
-                "sha256:e65c7f24d372b97d0920b864bbeb78322bb37b83f2606e2a2212631d5d51e5c0"
-            ],
-            "index": "pypi",
-            "version": "==2.1.0"
-        },
         "python-dateutil": {
             "hashes": [
                 "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c",
@@ -278,12 +255,6 @@
             ],
             "index": "pypi",
             "version": "==2.23.0"
-        },
-        "retrying": {
-            "hashes": [
-                "sha256:08c039560a6da2fe4f2c426d0766e284d3b736e355f8dd24b37367b0bb41973b"
-            ],
-            "version": "==1.3.3"
         },
         "scipy": {
             "hashes": [
@@ -371,7 +342,7 @@
                 "sha256:5b26757dc6f79a3b7dc9fab95359328d5747fcb2409d331ea66d0272b90ab2a0",
                 "sha256:8b995ffe925347a2138d7ac0fe77155e4311a0ea6d6da4f5128fe4b3cbe5ed71"
             ],
-            "markers": "platform_system == 'Darwin'",
+            "markers": "sys_platform == 'darwin'",
             "version": "==0.1.0"
         },
         "async-generator": {

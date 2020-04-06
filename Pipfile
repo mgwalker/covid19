@@ -13,10 +13,7 @@ requests = ">=2.23.0<3"
 chevron = "*"
 seaborn = "*"
 pandas = "*"
-plotly = "*"
-plotly-geo = "*"
 geopandas = "*"
-pyshp = "*"
 
 [requires]
 python_version = "3.8"

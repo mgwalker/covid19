@@ -1,15 +1,22 @@
 import pandas as pd
 import requests
 
-__all_us_data = [
-    {**d, "death": d["death"] if "death" in d else 0, "positive": d["positive"] or 0}
-    for d in requests.get("https://covidtracking.com/api/us/daily").json()[::-1]
-]
 
-__all_states_data = [
-    {**d, "death": d["death"] if "death" in d else 0, "positive": d["positive"] or 0}
-    for d in requests.get("https://covidtracking.com/api/states/daily").json()[::-1]
-]
+def __clean_data(data):
+    return {
+        **data,
+        "death": data["death"] if "death" in data else 0,
+        "positive": data["positive"] or 0,
+    }
+
+
+__all_us_data = "https://covidtracking.com/api/us/daily"
+__all_us_data = requests.get(__all_us_data).json()[::-1]
+__all_us_data = [__clean_data(d) for d in __all_us_data]
+
+__all_states_data = "https://covidtracking.com/api/states/daily"
+__all_states_data = requests.get(__all_states_data).json()[::-1]
+__all_states_data = [__clean_data(d) for d in __all_states_data]
 
 
 def __turn_data_into_frame(data):
@@ -56,6 +63,10 @@ def get_data_for_us():
 
 def get_dataframe_for_us():
     return __turn_data_into_frame(__all_us_data)
+
+
+def get_data_for_all_states():
+    return __all_states_data
 
 
 def get_data_for_state(state_name):

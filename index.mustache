@@ -27,6 +27,14 @@
           </h1>
 
           <p class="font-body-md">
+            That is {{ increase }} more cases than yesterday, or a one-day
+            increase of {{ increase_rate }}%. Yesterday there were
+            {{ increase_yesterday }} new cases, a one-day increase of
+            {{ increase_yesterday_rate }}%. The rate of new cases today is
+            {{ increase_change }} yesterday.
+          </p>
+
+          <p class="font-body-md">
             The number of confirmed cases is recently growing at about
             <strong>{{ change_rate.rate }}%</strong> per day. That is doubling
             about every <strong>{{ change_rate.doubling }} days</strong>. At the

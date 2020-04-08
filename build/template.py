@@ -1,5 +1,5 @@
 import chevron
-from math import log
+from math import floor, log, log10
 from state_data import names, population
 
 us_population = sum(population.values())
@@ -24,7 +24,9 @@ def write_data_to_template(data, file, index=False, extra_data={}):
         doubling_recent = (
             log(2, recent_average_change) if recent_average_change > 1 else 0
         )
-        seven_days = data[-1]["positive"] * (recent_average_change ** 7)
+        seven_days = round(data[-1]["positive"] * (recent_average_change ** 7))
+        if seven_days > 0:
+            seven_days = round(seven_days, 1 - int(floor(log10(seven_days))))
 
         positive = data[-1]["positive"]
         proportion = positive / local_population
@@ -68,7 +70,7 @@ def write_data_to_template(data, file, index=False, extra_data={}):
                             "change_rate": {
                                 "doubling": round(doubling_recent, 1),
                                 "rate": round((recent_average_change - 1) * 100, 1),
-                                "seven_days": f"{round(seven_days):,}",
+                                "seven_days": f"{seven_days:,}",
                             },
                             "increase": f"{increase:,}",
                             "increase_change": increase_change,

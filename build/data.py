@@ -6,7 +6,7 @@ def __clean_data(data):
     return {
         **data,
         "death": data["death"] if "death" in data else 0,
-        "positive": data["positive"] or 0,
+        "positive": data["positive"] or 0 if "positive" in data else 0,
     }
 
 
@@ -44,7 +44,9 @@ def __turn_data_into_frame(data):
             "totalTestResultsIncreaseRate": round(
                 (
                     s["totalTestResultsIncrease"] / data[i - 1]["totalTestResults"]
-                    if i > 0 and data[i - 1]["totalTestResults"]
+                    if i > 0
+                    and "totalTestResults" in data[i - 1]
+                    and data[i - 1]["totalTestResults"]
                     else 0
                 )
                 * 100,

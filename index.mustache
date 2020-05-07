@@ -18,43 +18,40 @@
       </div>
         <div class="grid-col-9">
           <h1 class="font-body-2xl">
-            {{ location }} has had {{ total }} confirmed cases.
-            <br />
+            {{ location }} has had about {{ deaths.total }} COVID-19 deaths and
+            {{ cases.total }} confirmed cases.
             <small>
-              That's about {{ proportion.count }} out of every
-              {{ proportion.per }} people who we know are or have been infected.
+              That's about <strong>{{ cases.proportion.count }} out of every
+              {{ cases.proportion.per }}</strong> people who we know are or have
+              been infected. About <strong>{{ deaths.fatality_rate }}%</strong>
+              of people who have tested positive have died.
             </small>
           </h1>
 
           <p class="font-body-md">
-            That is {{ increase }} more cases than yesterday, or a one-day
-            increase of {{ increase_rate }}%. Yesterday there were
-            {{ increase_yesterday }} new cases, a one-day increase of
-            {{ increase_yesterday_rate }}%. The rate of new cases today is
-            {{ increase_change }} yesterday.
+            There are about <strong>{{ deaths.change_rate.rate }}</strong> new
+            deaths every day. At this rate, about
+            <strong>{{ deaths.change_rate.seven_days }}</strong> total people
+            will have died of COVID-19 in 7 days. This chart shows the number of
+            deaths each day since the first case was identified. The dots are
+            the total number of deaths for each day and the line is the average
+            of the previous seven days.
+            <img src="graphs/{{ short_name }}-deaths.png">
           </p>
 
           <p class="font-body-md">
-            The number of confirmed cases is recently growing at about
-            <strong>{{ change_rate.rate }}%</strong> per day. That is doubling
-            about every <strong>{{ change_rate.doubling }} days</strong>. At the
-            current rate, the total number of confirmed cases will be about
-            <strong>{{change_rate.seven_days}}</strong> in 7 days.
+            There are about <strong>{{ cases.change_rate.rate }}</strong> new
+            cases identified every day. At the current rate, the total number of
+            confirmed cases will be about <strong>
+            {{ cases.change_rate.seven_days }}</strong> in 7 days. This chart
+            shows the number of new cases each day since the first case was
+            identified. The dots are the total number of new cases for each day
+            and the line is the average of the previous seven days.
+            <img src="graphs/{{ short_name }}-cases.png">
           </p>
-
-          <p>
-            The following chart shows the rate-of-change over time of different
-            statistics. The <span class="chart-confirmed">blue line</span> shows
-            the rate of change in the total confirmed infections. The
-            <span class="chart-tests">orange line</span> shows the rate of
-            change in the total number of tests administered. The
-            <span class="chart-deaths">black line</span> shows the rate of
-            change in the total number of deaths.
-          </p>
-
-          <img src="graphs/{{ short_name }}.png">
 
           {{#index}}
+          <!--
           <p class="font-body-md">
             <strong>{{ fastest_state.state }}</strong> has the fastest-growing
             rate of new infections at about
@@ -87,6 +84,7 @@
               {{/other_states}}
             </tbody>
           </table>
+          -->
           {{/index}}
         </div>
       </div>

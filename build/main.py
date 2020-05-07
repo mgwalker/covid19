@@ -35,7 +35,7 @@ states_by_increase.sort(key=lambda d: d["rate"], reverse=True)
 fastest = states_by_increase.pop(0)
 second = states_by_increase.pop(0)
 
-graph_data_to_file(get_dataframe_for_us(), "docs/graphs/USA.png")
+graph_data_to_file(get_dataframe_for_us(), "docs/graphs/USA")
 write_data_to_template(
     get_data_for_us(),
     "docs/index.html",
@@ -51,5 +51,5 @@ for state in names.keys():
     data = get_data_for_state(state)
     data_frame = get_dataframe_for_state(state)
 
-    graph_data_to_file(data_frame, f"docs/graphs/{state}.png")
+    graph_data_to_file(data_frame, f"docs/graphs/{state}")
     write_data_to_template(data, f"docs/{state}.html")

@@ -9,30 +9,41 @@ plt.figure(figsize=(15, 7.5))
 
 def graph_data_to_file(data, file):
     sns.set_context(rc={"lines.linewidth": 5})
-    plot = sns.lineplot(
-        x="positive", y="positiveIncreaseRate", data=data, color="#0088FF", ci=None
+    plot = sns.scatterplot(
+        x="index", y="positiveIncrease", data=data, color="#0088FF", ci=None,
     )
     plot = sns.lineplot(
-        x="positive", y="deathIncreaseRate", data=data, color="#000000", ci=None
+        x="index", y="positiveIncreaseAverage", data=data, color="#0088FF", ci=None
     )
-    plot = sns.lineplot(
-        x="positive",
-        y="totalTestResultsIncreaseRate",
-        data=data,
-        color="#FF8800",
-        ci=None,
-    )
-    plot.set(ylabel="percent change", xscale="log")
+
+    # plot = sns.scatterplot(
+    #     x="index", y="deathIncrease", data=data, color="#FF8800", ci=None,
+    # )
+    # plot = sns.lineplot(
+    #     x="index", y="deathIncreaseAverage", data=data, color="#FF8800", ci=None
+    # )
+
+    plot.set(ylabel="infections per day", xlabel="time")
     plot.grid(True)
 
-    plot.set_ylim(0, 100)
+    plot.set_xticklabels(["" for x in plot.get_xticks()])
+    plot.set_yticklabels([f"{y:,.0f}" for y in plot.get_yticks()])
 
-    plot.set_xticklabels([f"{x:,.0f}" for x in plot.get_xticks()])
-    plot.set_yticklabels([f"{x:.0f}%" for x in plot.get_yticks()])
+    plot.get_figure().savefig(f"{file}-cases.png")
+    plot.get_figure().clf()
 
-    # seaborn.set()
-    # plot = seaborn.regplot(x="positive", y="increase", data=state_data, ci=None)
-    # seaborn.regplot(x="positive", y="newTested", data=state_data, ci=None)
-    # plot.set_title(f"{names[state]} new cases vs. total")
-    plot.get_figure().savefig(file)
+    plot = sns.scatterplot(
+        x="index", y="deathIncrease", data=data, color="#FF8800", ci=None,
+    )
+    plot = sns.lineplot(
+        x="index", y="deathIncreaseAverage", data=data, color="#FF8800", ci=None
+    )
+
+    plot.set(ylabel="deaths per day", xlabel="time")
+    plot.grid(True)
+
+    plot.set_xticklabels(["" for x in plot.get_xticks()])
+    plot.set_yticklabels([f"{y:,.0f}" for y in plot.get_yticks()])
+
+    plot.get_figure().savefig(f"{file}-deaths.png")
     plot.get_figure().clf()

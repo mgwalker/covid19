@@ -18,11 +18,14 @@ __all_states_data = "https://covidtracking.com/api/states/daily"
 __all_states_data = requests.get(__all_states_data).json()[::-1]
 __all_states_data = [__clean_data(d) for d in __all_states_data]
 
+__days_for_average = 7
+
 
 def __turn_data_into_frame(data):
     data = [
         {
             **s,
+            "index": i,
             "deathIncreaseRate": round(
                 (
                     s["deathIncrease"] / data[i - 1]["death"]
@@ -32,6 +35,12 @@ def __turn_data_into_frame(data):
                 * 100,
                 2,
             ),
+            "deathIncreaseAverage": sum(
+                [d["deathIncrease"] for d in data[i - __days_for_average : i]]
+            )
+            / __days_for_average
+            if i > __days_for_average
+            else s["deathIncrease"],
             "positiveIncreaseRate": round(
                 (
                     s["positiveIncrease"] / data[i - 1]["positive"]
@@ -41,6 +50,12 @@ def __turn_data_into_frame(data):
                 * 100,
                 2,
             ),
+            "positiveIncreaseAverage": sum(
+                [d["positiveIncrease"] for d in data[i - __days_for_average : i]]
+            )
+            / __days_for_average
+            if i > __days_for_average
+            else s["positiveIncrease"],
             "totalTestResultsIncreaseRate": round(
                 (
                     s["totalTestResultsIncrease"] / data[i - 1]["totalTestResults"]

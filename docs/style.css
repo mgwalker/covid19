@@ -1,5 +1,8 @@
 h1 small {
-  font-weight:normal;
+  display: block;
+  font-weight: normal;
+  font-size: 0.65em;
+  margin-top: 1em;
 }
 
 .chart-confirmed, .chart-tests, .chart-deaths {

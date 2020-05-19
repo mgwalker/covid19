@@ -50,42 +50,15 @@
             <img src="graphs/{{ short_name }}-cases.png">
           </p>
 
-          {{#index}}
-          <!--
-          <p class="font-body-md">
-            <strong>{{ fastest_state.state }}</strong> has the fastest-growing
-            rate of new infections at about
-            <strong>{{ fastest_state.rate}}%</strong> per day. That is doubling
-            about every <strong>{{ fastest_state.doubling }} days</strong>.
-            {{ fastest_state.state }} currently has {{ fastest_state.today }}
-            confirmed cases, but at the current rate, it will have about
-            <strong>{{ fastest_state.seven_days }}</strong> in 7 days.
-            <strong>{{ second_fastest.state }}</strong> has the second
-            fastest-growing rate of new infections at about
-            <strong>{{ second_fastest.rate}}%</strong> per day. That's doubling
-            about every <strong>{{ second_fastest.doubling }} days</strong>, and
-            will cause total cases to increase from {{ second_fastest.today }}
-            to <strong>{{ second_fastest.seven_days }}</strong> in 7 days.
+           <p class="font-body-md">
+            This chart shows the percentage of tests that result in positive
+            diagnoses. The dots are the percentage for each day and the line is
+            the average of the previous seven days. A lower number suggests that
+            testing is adequate while a higher number suggests that people who
+            are infected are not getting tested.
+            <img src="graphs/{{ short_name }}-positive-test-rate.png">
           </p>
 
-          <table class="state_rate">
-            <thead>
-              <tr>
-                <th>State</th>
-                <th>Daily increase</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#other_states}}
-              <tr>
-                <td>{{ state }}</td>
-                <td>{{ rate }}%</td>
-              </tr>
-              {{/other_states}}
-            </tbody>
-          </table>
-          -->
-          {{/index}}
         </div>
       </div>
     </div>

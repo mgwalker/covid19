@@ -13,10 +13,28 @@ def __clean_data(data):
 __all_us_data = "https://covidtracking.com/api/us/daily"
 __all_us_data = requests.get(__all_us_data).json()[::-1]
 __all_us_data = [__clean_data(d) for d in __all_us_data]
+__all_us_data = [
+    {
+        **d,
+        "positiveTestRate": d["positive"] / d["totalTestResults"]
+        if d["totalTestResults"] > 0
+        else 0,
+    }
+    for i, d in enumerate(__all_us_data)
+]
 
 __all_states_data = "https://covidtracking.com/api/states/daily"
 __all_states_data = requests.get(__all_states_data).json()[::-1]
 __all_states_data = [__clean_data(d) for d in __all_states_data]
+__all_states_data = [
+    {
+        **d,
+        "positiveTestRate": d["positive"] / d["totalTestResults"]
+        if d["totalTestResults"] > 0
+        else 0,
+    }
+    for i, d in enumerate(__all_states_data)
+]
 
 __days_for_average = 7
 
@@ -56,17 +74,12 @@ def __turn_data_into_frame(data):
             / __days_for_average
             if i > __days_for_average
             else s["positiveIncrease"],
-            "totalTestResultsIncreaseRate": round(
-                (
-                    s["totalTestResultsIncrease"] / data[i - 1]["totalTestResults"]
-                    if i > 0
-                    and "totalTestResults" in data[i - 1]
-                    and data[i - 1]["totalTestResults"]
-                    else 0
-                )
-                * 100,
-                2,
-            ),
+            "positiveTestRateAverage": sum(
+                [d["positiveTestRate"] for d in data[i - __days_for_average : i]]
+            )
+            / __days_for_average
+            if i > __days_for_average
+            else 0,
         }
         for i, s in enumerate(data)
     ]

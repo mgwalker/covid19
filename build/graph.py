@@ -47,3 +47,19 @@ def graph_data_to_file(data, file):
 
     plot.get_figure().savefig(f"{file}-deaths.png")
     plot.get_figure().clf()
+
+    plot = sns.scatterplot(
+        x="index", y="positiveTestRate", data=data, color="#00AA00", ci=None,
+    )
+    plot = sns.lineplot(
+        x="index", y="positiveTestRateAverage", data=data, color="#00AA00", ci=None
+    )
+
+    plot.set(ylabel="positive test rate per day", xlabel="time")
+    plot.grid(True)
+
+    plot.set_xticklabels(["" for x in plot.get_xticks()])
+    plot.set_yticklabels([f"{round(y*100):,}" for y in plot.get_yticks()])
+
+    plot.get_figure().savefig(f"{file}-positive-test-rate.png")
+    plot.get_figure().clf()

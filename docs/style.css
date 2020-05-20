@@ -27,6 +27,7 @@ table.state_rate {
 
 table thead th {
   cursor: pointer;
+  padding: 0 10px;
 }
 
 table tbody td {

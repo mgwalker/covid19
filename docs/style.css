@@ -24,3 +24,21 @@ h1 small {
 table.state_rate {
   margin: 0 auto;
 }
+
+table thead th {
+  cursor: pointer;
+}
+
+table tbody td {
+  border-top: 1px solid black;
+  padding: 10px 0;
+  text-align: center;
+}
+
+table tbody td.order {
+  padding-right: 10px;
+}
+
+table tbody td.location {
+  text-align: left;
+}

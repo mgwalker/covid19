@@ -1,5 +1,81 @@
+import csv
 import pandas as pd
 import requests
+from io import StringIO
+from fips_data import population_for_fips
+
+counties_url = (
+    "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
+)
+
+
+def __get_default_obj(fips):
+    return {
+        "fips": fips,
+        "raw": {"cases": [], "deaths": []},
+        "recent": {"cases": [], "deaths": []},
+        "new": {"cases": [], "deaths": []},
+        "totals": {"cases": [], "deaths": []},
+    }
+
+
+def __per_10000(number, county):
+    population = population_for_fips(county["fips"])
+    if population > 0:
+        return 10000 * number / population
+    return 0
+
+
+def __get_new(key, county):
+    totals = county["totals"][key]
+    return totals[-1] - totals[-2] if len(totals) > 1 else totals[-1]
+
+
+def __get_recent(key, county, days=7):
+    new = county["new"][key]
+    return sum(new[-days:]) / days
+
+
+def get_counties():
+    csv_data = requests.get(counties_url)
+    csv_reader = csv.reader(StringIO(csv_data.text))
+    next(csv_reader)  # remove headers
+
+    data = {}
+    for row in csv_reader:
+        date, county, state, fips, cases, deaths = row
+        locale = f"{county}, {state}"
+
+        cases = int(cases)
+        deaths = int(deaths)
+
+        if locale == "New York City, New York":
+            fips = ["36005", "36047", "36061", "36081", "36085"]
+        elif locale == "Kansas City, Missouri":
+            fips = "29KCM"
+
+        if locale not in data:
+            data[locale] = __get_default_obj(fips)
+
+        county = data[locale]
+
+        raw = county["raw"]
+        raw["cases"].append(cases)
+        raw["deaths"].append(deaths)
+
+        totals = county["totals"]
+        totals["cases"].append(__per_10000(cases, county))
+        totals["deaths"].append(__per_10000(deaths, county))
+
+        new = county["new"]
+        new["cases"].append(__get_new(key="cases", county=county))
+        new["deaths"].append(__get_new(key="deaths", county=county))
+
+        recent = county["recent"]
+        recent["cases"].append(__get_recent(key="cases", county=county))
+        recent["deaths"].append(__get_recent(key="deaths", county=county))
+
+    return data
 
 
 def __clean_data(data):

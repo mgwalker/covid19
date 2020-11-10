@@ -1,0 +1,114 @@
+<html lang="en">
+  <head>
+    <title>COVID-19 data | Table</title>
+    <link rel="stylesheet" href="uswds-2.5.1/css/uswds.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-row">
+      <div class="grid-col-3">
+        <ul>
+          <li><a href="index.html">Whole US</a></li>
+        {{#all_states}}
+          <li><a href="{{ short_name }}.html">{{ full_name }}</a></li>
+        {{/all_states}}
+        </ul>
+      </div>
+        <div class="grid-col-9">
+
+          <table cellpadding="0" cellspacing="0">
+            <thead>
+              <tr>
+                <td class="bg-primary-lighter"></td>
+                <th id="location" class="bg-primary-lighter">Location</th>
+                <th id="deaths" class="bg-primary-lighter">Avg. deaths/day<br/>per million people</th>
+                <th id="cases" class="bg-primary-lighter">Avg. cases/day<br/>per million people</th>
+                <th id="tests" class="bg-primary-lighter">Avg. positive test rate/day</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="uswds-2.5.1/js/uswds.min.js"></script>
+
+    <script type="text/javascript">
+      window.addEventListener('DOMContentLoaded', () => {
+
+        const data = {{ data }};
+
+        const render = () => {
+          const tbody = document.querySelector('tbody');
+          tbody.innerText = '';
+
+          data.forEach((row, i) => {
+            const tr = document.createElement('tr');
+
+            const order = document.createElement('td');
+            order.innerText = i + 1;
+            order.setAttribute('class', 'order');
+            tr.appendChild(order);
+
+            const location = document.createElement('td');
+            location.innerText = row.state;
+            location.setAttribute('class', 'location');
+            tr.appendChild(location);
+
+            const deaths = document.createElement('td');
+            deaths.innerText = row.avg_deaths_per_day;
+            deaths.setAttribute('class', 'deaths');
+            tr.appendChild(deaths);
+
+            const cases = document.createElement('td');
+            cases.innerText = row.avg_cases_per_day;
+            cases.setAttribute('class', 'cases');
+            tr.appendChild(cases);
+
+            const tests = document.createElement('td');
+            tests.innerText = row.avg_positive_test_rate;
+            tests.setAttribute('class', 'tests');
+            tr.appendChild(tests);
+
+            tbody.appendChild(tr);
+          })
+        };
+
+        const sortBy = (key) => {
+          data.sort((a,b) => {
+            const va = key === 'state' ? b[key] : +(a[key].replace(/[^\d.]/g, ''));
+            const vb = key === 'state' ? a[key] : +(b[key].replace(/[^\d.]/g, ''));
+
+            if(va === vb) {
+              return 0;
+            }
+            if(va > vb) {
+              return -1;
+            }
+            return 1;
+          });
+          render();
+        };
+
+        document.getElementById('location').addEventListener('click', () => {
+          sortBy('state')
+        });
+        document.getElementById('deaths').addEventListener('click', () => {
+          sortBy('avg_deaths_per_day')
+        });
+        document.getElementById('cases').addEventListener('click', () => {
+          sortBy('avg_cases_per_day')
+        });
+        document.getElementById('tests').addEventListener('click', () => {
+          sortBy('avg_positive_test_rate')
+        });
+
+        sortBy('avg_deaths_per_day');
+      })
+    </script>
+  </body>
+</html>

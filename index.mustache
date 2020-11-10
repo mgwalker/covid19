@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <title>COVID-19 data | {{ location }}</title>
+    <link rel="stylesheet" href="uswds-2.5.1/css/uswds.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-row">
+      <div class="grid-col-3">
+        <ul>
+          <li><a href="index.html">Whole US</a></li>
+          <li><a href="table.html">Sortable table</a></li>
+          <hr />
+        {{#all_states}}
+          <li><a href="{{ short_name }}.html">{{ full_name }}</a></li>
+        {{/all_states}}
+        </ul>
+      </div>
+        <div class="grid-col-9">
+          <h1 class="font-body-2xl">
+            {{ location }} has had about {{ deaths.total }} COVID-19 deaths and
+            {{ cases.total }} confirmed cases.
+            <small>
+              That's about <strong>{{ cases.proportion.count }} out of every
+              {{ cases.proportion.per }}</strong> people who we know are or have
+              been infected. About <strong>{{ deaths.fatality_rate }}%</strong>
+              of people who have tested positive have died.
+            </small>
+          </h1>
+
+          <p class="font-body-md">
+            There are about <strong>{{ deaths.change_rate.rate }}</strong> new
+            deaths every day. At this rate, about
+            <strong>{{ deaths.change_rate.seven_days }}</strong> total people
+            will have died of COVID-19 in 7 days. This chart shows the number of
+            deaths each day since the first case was identified. The dots are
+            the total number of deaths for each day and the line is the average
+            of the previous seven days.
+            <img src="graphs/{{ short_name }}-deaths.png">
+          </p>
+
+          <p class="font-body-md">
+            There are about <strong>{{ cases.change_rate.rate }}</strong> new
+            cases identified every day. At the current rate, the total number of
+            confirmed cases will be about <strong>
+            {{ cases.change_rate.seven_days }}</strong> in 7 days. This chart
+            shows the number of new cases each day since the first case was
+            identified. The dots are the total number of new cases for each day
+            and the line is the average of the previous seven days.
+            <img src="graphs/{{ short_name }}-cases.png">
+          </p>
+
+           <p class="font-body-md">
+            This chart shows the percentage of tests that result in positive
+            diagnoses. The dots are the percentage for each day and the line is
+            the average of the previous seven days. A lower number suggests that
+            testing is adequate while a higher number suggests that people who
+            are infected are not getting tested.
+            <img src="graphs/{{ short_name }}-positive-test-rate.png">
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="uswds-2.5.1/js/uswds.min.js"></script>
+  </body>
+</html>

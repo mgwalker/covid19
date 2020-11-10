@@ -1,0 +1,45 @@
+h1 small {
+  display: block;
+  font-weight: normal;
+  font-size: 0.65em;
+  margin-top: 1em;
+}
+
+.chart-confirmed, .chart-tests, .chart-deaths {
+  font-weight: bold;
+}
+
+.chart-confirmed {
+  color: #0088FF;
+}
+
+.chart-tests {
+  color: #FF8800;
+}
+
+.chart-deaths {
+  color: black;
+}
+
+table.state_rate {
+  margin: 0 auto;
+}
+
+table thead th {
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+table tbody td {
+  border-top: 1px solid black;
+  padding: 10px 0;
+  text-align: center;
+}
+
+table tbody td.order {
+  padding-right: 10px;
+}
+
+table tbody td.location {
+  text-align: left;
+}

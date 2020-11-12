@@ -12,6 +12,7 @@ all_states = [{"code": state, "name": __meta[state]["name"]} for state in __meta
 table_data = []
 
 for (state, meta) in __meta.items():
+
     __state_data = requests.get(meta["link"])
     __state_data = pandas.read_csv(StringIO(__state_data.text))
     __state_data["index"] = range(len(__state_data))
@@ -20,9 +21,9 @@ for (state, meta) in __meta.items():
         "yes" if d is True else "no" for d in __state_data["projected"]
     ]
 
-    # graph_data_to_file(
-    #     data=__state_data, file=f"docs/graphs/{state}", withTotals=state == "US"
-    # )
+    graph_data_to_file(
+        data=__state_data, file=f"docs/graphs/{state}", withTotals=state == "US"
+    )
 
     # For now, just assume there are 14 projected days. Index starts at 0,
     # so go back 15 from the length.
@@ -34,8 +35,12 @@ for (state, meta) in __meta.items():
     table_data.append(
         {
             "state": meta["name"],
-            "deaths_per_million_per_day": f"{current['deathIncreasePerMillion']:,}",
-            "positive_per_million_per_day": f"{current['positiveIncreasePerMillion']:,}",
+            "deaths_per_million_per_day": (
+                f"{round(current['deathIncreaseAveragePerMillion']):,}"
+            ),
+            "positive_per_million_per_day": (
+                f"{round(current['positiveIncreaseAveragePerMillion']):,}"
+            ),
         }
     )
 

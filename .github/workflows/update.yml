@@ -15,7 +15,7 @@ jobs:
           pip install pipenv
           pipenv install --ignore-pipfile
       - name: update the site
-        run: pipenv run python build/main.py
+        run: pipenv run python build.py
       - name: commit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}

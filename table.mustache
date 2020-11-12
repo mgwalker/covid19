@@ -11,7 +11,7 @@
         <ul>
           <li><a href="index.html">Whole US</a></li>
         {{#all_states}}
-          <li><a href="{{ short_name }}.html">{{ full_name }}</a></li>
+          <li><a href="{{ code }}.html">{{ name }}</a></li>
         {{/all_states}}
         </ul>
       </div>
@@ -24,7 +24,7 @@
                 <th id="location" class="bg-primary-lighter">Location</th>
                 <th id="deaths" class="bg-primary-lighter">Avg. deaths/day<br/>per million people</th>
                 <th id="cases" class="bg-primary-lighter">Avg. cases/day<br/>per million people</th>
-                <th id="tests" class="bg-primary-lighter">Avg. positive test rate/day</th>
+                <!-- th id="tests" class="bg-primary-lighter">Avg. positive test rate/day</th -->
               </tr>
             </thead>
             <tbody>
@@ -60,19 +60,19 @@
             tr.appendChild(location);
 
             const deaths = document.createElement('td');
-            deaths.innerText = row.avg_deaths_per_day;
+            deaths.innerText = row.deaths_per_million_per_day;
             deaths.setAttribute('class', 'deaths');
             tr.appendChild(deaths);
 
             const cases = document.createElement('td');
-            cases.innerText = row.avg_cases_per_day;
+            cases.innerText = row.positive_per_million_per_day;
             cases.setAttribute('class', 'cases');
             tr.appendChild(cases);
 
-            const tests = document.createElement('td');
-            tests.innerText = row.avg_positive_test_rate;
-            tests.setAttribute('class', 'tests');
-            tr.appendChild(tests);
+            // const tests = document.createElement('td');
+            // tests.innerText = 0;
+            // tests.setAttribute('class', 'tests');
+            // tr.appendChild(tests);
 
             tbody.appendChild(tr);
           })
@@ -98,16 +98,13 @@
           sortBy('state')
         });
         document.getElementById('deaths').addEventListener('click', () => {
-          sortBy('avg_deaths_per_day')
+          sortBy('deaths_per_million_per_day')
         });
         document.getElementById('cases').addEventListener('click', () => {
-          sortBy('avg_cases_per_day')
-        });
-        document.getElementById('tests').addEventListener('click', () => {
-          sortBy('avg_positive_test_rate')
+          sortBy('positive_per_million_per_day')
         });
 
-        sortBy('avg_deaths_per_day');
+        sortBy('deaths_per_million_per_day');
       })
     </script>
   </body>

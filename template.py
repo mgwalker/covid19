@@ -2,9 +2,17 @@ import chevron
 
 
 def write_data_to_template(
-    *, state, current, future, file, index=False, state_list=[], extra_data={}
+    *,
+    state,
+    state_name,
+    current,
+    future,
+    file,
+    index=False,
+    state_list=[],
+    extra_data={},
 ):
-    location_name = "The United States" if index else state
+    location_name = "The United States" if index else state_name
 
     deaths = current["deaths"]
     positive = current["positive"]

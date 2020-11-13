@@ -48,6 +48,7 @@ for (state, meta) in __meta.items():
 
     write_data_to_template(
         state=state,
+        state_name=meta["name"],
         current=current,
         future=future,
         file=f"docs/{filename}.html",

@@ -27,10 +27,13 @@ for (state, meta) in __meta.items():
 
     # For now, just assume there are 14 projected days. Index starts at 0,
     # so go back 15 from the length.
-    current = __state_data.iloc[len(__state_data.index) - 15]
+    data_len = len(__state_data.index)
+    current = __state_data.iloc[data_len - 15]
     current = current.to_dict()
-    future = __state_data.iloc[len(__state_data.index) - 8]
+    future = __state_data.iloc[data_len - 8]
     future = future.to_dict()
+    far_future = __state_data.iloc[data_len - 1]
+    far_future = far_future.to_dict()
 
     table_data.append(
         {
@@ -51,6 +54,7 @@ for (state, meta) in __meta.items():
         state_name=meta["name"],
         current=current,
         future=future,
+        far_future=far_future,
         file=f"docs/{filename}.html",
         index=state == "US",
         state_list=all_states,

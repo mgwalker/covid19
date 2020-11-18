@@ -30,25 +30,38 @@
           </h1>
 
           <p class="font-body-md">
-            There are about <strong>{{ deaths.change_rate.rate }}</strong> new
-            deaths every day (7-day average). At this rate, about
-            <strong>{{ deaths.change_rate.seven_days }}</strong> total people
-            will have died of COVID-19 in 7 days. This chart shows the number of
-            deaths each day since the first case was identified. The dots are
-            the total number of deaths for each day and the line is the average
-            of the previous seven days.
-            <img src="graphs/{{ short_name }}-deaths.png">
+            Today there {{#cases.today_plural}}were{{/cases.today_plural}}
+            {{^cases.today_plural}}was{{/cases.today_plural}} <strong>
+            {{ cases.today }}</strong> COVID-19
+            case{{#cases.today_plural}}s{{/cases.today_plural}} identified.
+            There are about <strong>{{ cases.change_rate.rate }}</strong> new
+            cases identified every day (7-day average). At the current rate, the
+            average number of new cases per day will be about
+            <strong>{{ cases.change_rate.seven_days }}</strong> in 7 days and
+            about <strong>{{ cases.change_rate.fourteen_days }}</strong> in 14
+            days. This chart shows the number of new cases each day since the
+            first case was identified. The dots are the total number of new
+            cases for each day and the line is the average of the previous seven
+            days. The black dots are projections based on recent average rates.
+            <img src="graphs/{{ short_name }}-cases.png">
           </p>
 
+
           <p class="font-body-md">
-            There are about <strong>{{ cases.change_rate.rate }}</strong> new
-            cases identified every day (7-day average). At the current rate, the total number of
-            confirmed cases will be about <strong>
-            {{ cases.change_rate.seven_days }}</strong> in 7 days. This chart
-            shows the number of new cases each day since the first case was
-            identified. The dots are the total number of new cases for each day
-            and the line is the average of the previous seven days.
-            <img src="graphs/{{ short_name }}-cases.png">
+            Today there {{#deaths.today_plural}}were{{/deaths.today_plural}}
+            {{^deaths.today_plural}}was{{/deaths.today_plural}} <strong>
+            {{ deaths.today }}</strong> COVID-19
+            death{{#deaths.today_plural}}s{{/deaths.today_plural}}.
+            There are about <strong>{{ deaths.change_rate.rate }}</strong> new
+            deaths every day (7-day average). At the current rate, the average
+            number of people dying each day will be about
+            <strong>{{ deaths.change_rate.seven_days }}</strong> in 7 days and
+            about <strong>{{ deaths.change_rate.fourteen_days }}</strong> in 14
+            days. This chart shows the number of deaths each day since the first
+            case was identified. The dots are the total number of deaths for
+            each day and the line is the average of the previous seven days. The
+            black dots are projections based on recent average rates.
+            <img src="graphs/{{ short_name }}-deaths.png">
           </p>
 
           <!-- Temporarily turn off the tests graph -->

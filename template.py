@@ -7,6 +7,7 @@ def write_data_to_template(
     state_name,
     current,
     future,
+    far_future,
     file,
     index=False,
     state_list=[],
@@ -23,20 +24,26 @@ def write_data_to_template(
         "cases": {
             "change_rate": {
                 "rate": f"{round(current['positiveIncreaseAverage']):,}",
-                "seven_days": f"{round(future['positive']):,}",
+                "seven_days": f"{round(future['positiveIncrease']):,}",
+                "fourteen_days": f"{round(far_future['positiveIncrease']):,}",
             },
             "proportion": {
                 "count": f"{current['positivePerMillion']:,}",
                 "per": f"{1_000_000:,}",
             },
+            "today_plural": False if current["positiveIncrease"] == 1 else True,
+            "today": f"{current['positiveIncrease']:,}",
             "total": f"{positive:,}",
         },
         "deaths": {
             "change_rate": {
                 "rate": f"{round(current['deathIncreaseAverage']):,}",
-                "seven_days": f"{round(future['deaths']):,}",
+                "seven_days": f"{round(future['deathIncrease']):,}",
+                "fourteen_days": f"{round(far_future['deathIncrease']):,}",
             },
             "fatality_rate": round(100 * deaths / positive, 2) if positive > 0 else 0,
+            "today_plural": False if current["deathIncrease"] == 1 else True,
+            "today": f"{current['deathIncrease']:,}",
             "total": f"{deaths:,}",
         },
         "index": index,

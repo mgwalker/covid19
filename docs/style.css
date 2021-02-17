@@ -1,3 +1,21 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #fb0;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  box-shadow: 0 0 0 0 black;
+  box-shadow: 0 0 10px 0px black;
+  z-index: 10;
+}
+
+.grid-container {
+  margin-top: 25px;
+}
+
 h1 small {
   display: block;
   font-weight: normal;
